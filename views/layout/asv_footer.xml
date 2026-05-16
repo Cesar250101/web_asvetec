@@ -70,27 +70,39 @@
                                         </li>
                                     </ul>
 
-                                    <!-- Redes sociales — URLs manejadas por Odoo backend -->
-                                    <div class="s_social_media asv-footer-social o_not_editable"
-                                         data-snippet="s_social_media"
-                                         data-name="Social Media"
-                                         contenteditable="false">
-                                        <a href="/website/social/facebook"
-                                           class="s_social_media_facebook" target="_blank">
-                                            <i class="fa fa-facebook"/>
-                                        </a>
-                                        <a href="/website/social/twitter"
-                                           class="s_social_media_twitter" target="_blank">
-                                            <i class="fa fa-twitter"/>
-                                        </a>
-                                        <a href="/website/social/linkedin"
-                                           class="s_social_media_linkedin" target="_blank">
-                                            <i class="fa fa-linkedin"/>
-                                        </a>
-                                        <a href="/website/social/instagram"
-                                           class="s_social_media_instagram" target="_blank">
-                                            <i class="fa fa-instagram"/>
-                                        </a>
+                                    <!-- Redes sociales — URLs desde res.company -->
+                                    <t t-set="asv_company" t-value="website.company_id"/>
+                                    <div class="asv-footer-social">
+                                        <t t-if="asv_company.social_facebook">
+                                            <a t-att-href="asv_company.social_facebook"
+                                               class="asv-social-link" target="_blank" rel="noopener">
+                                                <i class="fa fa-facebook"/>
+                                            </a>
+                                        </t>
+                                        <t t-if="asv_company.social_twitter">
+                                            <a t-att-href="asv_company.social_twitter"
+                                               class="asv-social-link" target="_blank" rel="noopener">
+                                                <i class="fa fa-twitter"/>
+                                            </a>
+                                        </t>
+                                        <t t-if="asv_company.social_linkedin">
+                                            <a t-att-href="asv_company.social_linkedin"
+                                               class="asv-social-link" target="_blank" rel="noopener">
+                                                <i class="fa fa-linkedin"/>
+                                            </a>
+                                        </t>
+                                        <t t-if="asv_company.social_instagram">
+                                            <a t-att-href="asv_company.social_instagram"
+                                               class="asv-social-link" target="_blank" rel="noopener">
+                                                <i class="fa fa-instagram"/>
+                                            </a>
+                                        </t>
+                                        <t t-if="asv_company.social_youtube">
+                                            <a t-att-href="asv_company.social_youtube"
+                                               class="asv-social-link" target="_blank" rel="noopener">
+                                                <i class="fa fa-youtube"/>
+                                            </a>
+                                        </t>
                                     </div>
                                 </div>
 
