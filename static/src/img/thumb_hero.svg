@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <rect width="200" height="120" fill="#f7f8fa"/>
+  <!-- Stripe top -->
+  <rect width="200" height="5" fill="#0f9fe6"/>
+  <!-- Left cyan panel -->
+  <rect x="0" y="5" width="105" height="115" fill="#0f9fe6"/>
+  <!-- Right photo area -->
+  <rect x="105" y="5" width="95" height="115" fill="#2c2c61"/>
+  <!-- Text lines -->
+  <rect x="12" y="28" width="60" height="5" rx="2" fill="rgba(255,255,255,0.6)"/>
+  <rect x="12" y="38" width="80" height="9" rx="2" fill="white"/>
+  <rect x="12" y="52" width="70" height="5" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <rect x="12" y="62" width="55" height="5" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <!-- CTA -->
+  <rect x="12" y="76" width="40" height="14" rx="2" fill="#1c1a44"/>
+  <!-- Float card -->
+  <rect x="118" y="80" width="68" height="30" rx="3" fill="rgba(28,26,68,0.85)"/>
+  <rect x="124" y="86" width="30" height="3" rx="1" fill="#7ed0f5"/>
+  <rect x="124" y="92" width="55" height="3" rx="1" fill="rgba(255,255,255,0.7)"/>
+  <rect x="124" y="98" width="45" height="3" rx="1" fill="rgba(255,255,255,0.5)"/>
+  <text x="100" y="115" font-family="sans-serif" font-size="7" fill="#8a8e96" text-anchor="middle">Hero Industrial</text>
+</svg>

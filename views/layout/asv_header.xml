@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inyecta Google Fonts Open Sans + Barlow Condensed en todas las páginas del sitio ASVETEC -->
+    <template id="asv_google_fonts" inherit_id="website.layout" name="ASVETEC Google Fonts">
+        <xpath expr="//head" position="inside">
+            <t t-if="website and website.name == 'ASVETEC'">
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Barlow+Condensed:ital,wght@1,800;1,900&amp;display=swap"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Stripe decorativo cyan-azul en el tope + clase del sitio -->
+    <template id="asv_body_class" inherit_id="website.layout" name="ASVETEC Body Class">
+        <xpath expr="//div[@id='wrapwrap']" position="attributes">
+            <attribute name="t-attf-class" add="#{'asv-body' if (website and website.name == 'ASVETEC') else ''}" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_asv_contact" name="ASVETEC Contacto y Cotización">
+        <section class="s_asv_contact asv-contact" data-snippet="s_asv_contact" id="contacto">
+            <!-- Franja cyan decorativa en el tope -->
+            <div class="asv-contact-stripe" aria-hidden="true"/>
+
+            <div class="asv-container">
+                <div class="asv-contact-grid">
+
+                    <!-- Columna izquierda — info de contacto -->
+                    <div class="asv-contact-info">
+                        <div class="asv-eyebrow" style="color: var(--asv-cyan-300);">Cotización rápida</div>
+                        <h2 class="asv-h2 asv-h2-ondark">
+                            Hablemos de su próximo equipo o servicio en faena.
+                        </h2>
+                        <p class="asv-p asv-p-ondark">
+                            Cuéntenos qué necesita. Un asesor técnico revisa cada solicitud y
+                            responde con cotización dentro de la jornada hábil.
+                        </p>
+
+                        <div class="asv-contact-rows">
+                            <div class="asv-contact-row">
+                                <div class="asv-contact-row-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-contact-row-label">Teléfono fijo</div>
+                                    <div class="asv-contact-row-value">+56 55 293 6063</div>
+                                </div>
+                            </div>
+                            <div class="asv-contact-row">
+                                <div class="asv-contact-row-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-contact-row-label">Correo de ventas</div>
+                                    <div class="asv-contact-row-value">ventas@asvetec.cl</div>
+                                </div>
+                            </div>
+                            <div class="asv-contact-row">
+                                <div class="asv-contact-row-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-contact-row-label">Dirección</div>
+                                    <div class="asv-contact-row-value">Antofagasta, II Región · Chile</div>
+                                </div>
+                            </div>
+                            <div class="asv-contact-row">
+                                <div class="asv-contact-row-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-contact-row-label">Sitio web</div>
+                                    <div class="asv-contact-row-value">asvetec.cl</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="asv-contact-emergency">
+                            <div class="asv-contact-emergency-label">Servicio de emergencia</div>
+                            <p class="asv-contact-emergency-text">
+                                Para detenciones críticas en faena, comuníquese directamente con
+                                nuestra mesa de turno. Tiempo de respuesta promedio:
+                                <strong>24 horas en sitio</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha — formulario -->
+                    <div class="asv-contact-form-wrap">
+                        <div class="asv-contact-form-title">Solicitar cotización</div>
+                        <p class="asv-contact-form-subtitle">
+                            Todos los campos con * son obligatorios. Respuesta en menos de 24 horas hábiles.
+                        </p>
+                        <form class="asv-contact-form" action="/asvetec/cotizar" method="post">
+                            <div class="asv-form-row-2">
+                                <label class="asv-form-field">
+                                    <span class="asv-form-label">Nombre *</span>
+                                    <input class="asv-input" type="text" name="name" required="1" placeholder="Tu nombre"/>
+                                </label>
+                                <label class="asv-form-field">
+                                    <span class="asv-form-label">Empresa</span>
+                                    <input class="asv-input" type="text" name="company" placeholder="Razón social"/>
+                                </label>
+                            </div>
+                            <div class="asv-form-row-2">
+                                <label class="asv-form-field">
+                                    <span class="asv-form-label">Teléfono</span>
+                                    <input class="asv-input" type="tel" name="phone" placeholder="+56 9 …"/>
+                                </label>
+                                <label class="asv-form-field">
+                                    <span class="asv-form-label">Email *</span>
+                                    <input class="asv-input" type="email" name="email" required="1" placeholder="tu@empresa.cl"/>
+                                </label>
+                            </div>
+                            <label class="asv-form-field asv-form-field-full">
+                                <span class="asv-form-label">Categoría de interés</span>
+                                <select class="asv-input" name="category">
+                                    <option>Limpieza Industrial</option>
+                                    <option>Equipos de Taller</option>
+                                    <option>Generadores</option>
+                                    <option>Arriendo</option>
+                                    <option>Herramientas</option>
+                                    <option>Insumos</option>
+                                    <option>Servicio técnico en faena</option>
+                                    <option>Otro</option>
+                                </select>
+                            </label>
+                            <label class="asv-form-field asv-form-field-full">
+                                <span class="asv-form-label">Mensaje *</span>
+                                <textarea class="asv-input" name="message" rows="4" required="1"
+                                          placeholder="Detalla el equipo o servicio que necesitas, cantidad, ubicación de faena y plazos."/>
+                            </label>
+                            <div class="asv-form-footer">
+                                <label class="asv-form-privacy">
+                                    <input type="checkbox" required="1"/>
+                                    Acepto la política de privacidad
+                                </label>
+                                <button type="submit" class="asv-btn asv-btn-primary asv-btn-lg">
+                                    Enviar solicitud
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <line x1="22" y1="2" x2="11" y2="13"/>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

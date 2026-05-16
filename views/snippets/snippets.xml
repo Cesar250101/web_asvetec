@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Registro de snippets ASVETEC en el panel del editor de Odoo -->
+    <template id="snippets_asvetec" inherit_id="website.snippets" name="ASVETEC Snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div id="snippet_asvetec" class="o_panel">
+                <div class="o_panel_header">ASVETEC</div>
+                <div class="o_panel_body">
+                    <t t-snippet="web_asvetec.s_asv_hero"
+                       string="Hero Industrial"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_hero.svg">
+                        <keywords>hero, industrial, banner, portada, asvetec</keywords>
+                    </t>
+                    <t t-snippet="web_asvetec.s_asv_trust_bar"
+                       string="Barra de Confianza"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_trust.svg">
+                        <keywords>trust, confianza, stats, experiencia</keywords>
+                    </t>
+                    <t t-snippet="web_asvetec.s_asv_categories"
+                       string="Categorías de Productos"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_categories.svg">
+                        <keywords>categorías, catálogo, productos, grid</keywords>
+                    </t>
+                    <t t-snippet="web_asvetec.s_asv_featured_products"
+                       string="Productos Destacados"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_products.svg">
+                        <keywords>productos, destacados, stock, cotizar</keywords>
+                    </t>
+                    <t t-snippet="web_asvetec.s_asv_about"
+                       string="Nosotros"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_about.svg">
+                        <keywords>nosotros, about, empresa, asvetec</keywords>
+                    </t>
+                    <t t-snippet="web_asvetec.s_asv_brands"
+                       string="Marcas Representadas"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_brands.svg">
+                        <keywords>marcas, logos, karcher, bosch, stihl</keywords>
+                    </t>
+                    <t t-snippet="web_asvetec.s_asv_services"
+                       string="Servicios en Terreno"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_services.svg">
+                        <keywords>servicios, terreno, taller, faena, minería</keywords>
+                    </t>
+                    <t t-snippet="web_asvetec.s_asv_contact"
+                       string="Contacto y Cotización"
+                       t-thumbnail="/web_asvetec/static/src/img/thumb_contact.svg">
+                        <keywords>contacto, cotización, formulario, email</keywords>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

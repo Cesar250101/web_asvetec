@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Override del filmstrip de categorías del shop.
+        Reemplaza las imágenes PNG (image_128) con los SVG de la web (asv_svg_icon).
+        Solo aplica cuando el sitio se llama ASVETEC.
+    -->
+    <template id="asv_filmstrip_categories"
+              inherit_id="website_sale.filmstrip_categories"
+              name="ASVETEC Filmstrip SVG Icons"
+              priority="20">
+
+        <!-- Reemplaza el item del filmstrip para usar SVG en lugar de PNG -->
+        <xpath expr="//li[@t-foreach='entries']" position="replace">
+            <li t-foreach="entries" t-as="c"
+                t-attf-class="d-flex {{'pe-3' if not c_last else ''}}"
+                t-att-data-link-href="keep('/shop/category/' + slug(c), category=0)">
+
+                <input type="radio"
+                       t-attf-name="wsale_categories_top_radios_{{parentCategoryId}}"
+                       class="btn-check pe-none"
+                       t-att-id="c.id"
+                       t-att-value="c.id"
+                       t-att-checked="'true' if c.id == category.id else None"/>
+
+                <t t-if="website and website.name == 'ASVETEC'">
+                    <!-- Pill ASVETEC con ícono SVG de la web -->
+                    <label t-attf-class="asv-filmstrip-pill {{'active' if c.id == category.id else ''}}"
+                           t-att-for="c.id"
+                           t-att-href="keep('/shop/category/' + slug(c), category=0)">
+                        <t t-if="c.asv_svg_icon">
+                            <span class="asv-filmstrip-icon">
+                                <t t-raw="c.asv_svg_icon"/>
+                            </span>
+                        </t>
+                        <span t-field="c.name"/>
+                    </label>
+                </t>
+                <t t-else="">
+                    <!-- Filmstrip nativo para otros sitios -->
+                    <div t-attf-class="btn btn-{{navClass}} d-flex align-items-center {{'ps-2 pe-3' if c.image_128 else 'px-4'}} fs-6 fw-normal {{ 'border-primary' if c.id == category.id else '' }}"
+                         t-att-for="c.id">
+                        <div t-if="c.image_128"
+                             t-attf-style="background-image:url('data:image/png;base64,#{c.image_128}')"
+                             class="o_image_40_cover oe_img_bg o_bg_img_center rounded-3 me-3"
+                             t-att-alt="c.name"/>
+                        <span t-field="c.name"/>
+                    </div>
+                </t>
+            </li>
+        </xpath>
+    </template>
+</odoo>

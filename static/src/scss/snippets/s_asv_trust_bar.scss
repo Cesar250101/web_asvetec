@@ -1,0 +1,59 @@
+// ---- ASVETEC Trust Bar ----
+.s_asv_trust_bar.asv-trust {
+    background: var(--asv-navy-800);
+    padding: 0;
+
+    .asv-trust-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .asv-trust-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 24px 28px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:last-child { border-right: none; }
+    }
+
+    .asv-trust-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--asv-radius-md);
+        background: rgba(15, 159, 230, 0.18);
+        color: var(--asv-cyan-300);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+    }
+
+    .asv-trust-num {
+        font-family: var(--asv-font-display);
+        font-style: italic;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 1;
+        color: var(--asv-cyan-300);
+        margin-bottom: 4px;
+    }
+
+    .asv-trust-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: white;
+        line-height: 1.3;
+    }
+
+    @media (max-width: 768px) {
+        .asv-trust-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .asv-trust-item {
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+}

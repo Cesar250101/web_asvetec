@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_asv_services" name="ASVETEC Servicios en Terreno">
+        <section class="s_asv_services asv-section" data-snippet="s_asv_services"
+                 id="servicios" style="background: var(--asv-paper);">
+            <div class="asv-container">
+                <div class="asv-services-intro">
+                    <div>
+                        <div class="asv-eyebrow">Servicios en terreno</div>
+                        <h2 class="asv-h2" style="font-size: 40px; line-height: 1.1;">
+                            Donde esté su faena, llegamos.
+                        </h2>
+                    </div>
+                    <p class="asv-section-sub" style="margin: 0; align-self: flex-end;">
+                        Combinamos talleres en Antofagasta con servicio en terreno desde Arica hasta
+                        Atacama. Diseñamos contratos de prestación de servicios adaptados a las
+                        necesidades operativas de cada cliente.
+                    </p>
+                </div>
+
+                <div class="asv-services-grid">
+
+                    <div class="asv-service-card">
+                        <div class="asv-service-top">
+                            <div class="asv-service-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-8h6v8"/>
+                                </svg>
+                            </div>
+                            <span class="asv-service-tag">Antofagasta</span>
+                        </div>
+                        <h3 class="asv-service-title">Talleres propios</h3>
+                        <p class="asv-service-desc">
+                            Mantención y reparación de equipos en nuestros talleres en Antofagasta,
+                            con bancos de prueba y repuestos en stock.
+                        </p>
+                        <a href="#contacto" class="asv-service-link">
+                            Solicitar
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="asv-service-card">
+                        <div class="asv-service-top">
+                            <div class="asv-service-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 22l4-11 6 4 4-9 6 16z"/><circle cx="6" cy="6" r="2"/>
+                                </svg>
+                            </div>
+                            <span class="asv-service-tag">Sitio minero</span>
+                        </div>
+                        <h3 class="asv-service-title">Faenas mineras</h3>
+                        <p class="asv-service-desc">
+                            Servicio técnico programado y de emergencia en faena. Personal con
+                            acreditaciones para acceso a sitio minero.
+                        </p>
+                        <a href="#contacto" class="asv-service-link">
+                            Solicitar
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="asv-service-card">
+                        <div class="asv-service-top">
+                            <div class="asv-service-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M9 3v18"/><path d="M3 12h6"/>
+                                    <circle cx="15" cy="9" r="2"/><path d="M15 13v6"/>
+                                </svg>
+                            </div>
+                            <span class="asv-service-tag">Llave en mano</span>
+                        </div>
+                        <h3 class="asv-service-title">Instalaciones industriales</h3>
+                        <p class="asv-service-desc">
+                            Implementación de líneas de aire comprimido, sistemas de limpieza y
+                            automatización neumática y electrónica.
+                        </p>
+                        <a href="#contacto" class="asv-service-link">
+                            Solicitar
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="asv-service-card">
+                        <div class="asv-service-top">
+                            <div class="asv-service-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                    <circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+                                    <path d="M2 11h20"/>
+                                </svg>
+                            </div>
+                            <span class="asv-service-tag">Disponibilidad inmediata</span>
+                        </div>
+                        <h3 class="asv-service-title">Arriendo de equipos</h3>
+                        <p class="asv-service-desc">
+                            Generadores, compresores e hidrolavadoras disponibles por día, mes o
+                            contrato de faena. Con o sin operador.
+                        </p>
+                        <a href="#contacto" class="asv-service-link">
+                            Solicitar
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

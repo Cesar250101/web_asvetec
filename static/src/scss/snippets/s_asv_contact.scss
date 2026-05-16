@@ -1,0 +1,168 @@
+// ---- ASVETEC Contacto y Cotización ----
+.s_asv_contact.asv-contact {
+    background: var(--asv-navy-800);
+    color: white;
+    padding: 72px 0;
+    position: relative;
+
+    .asv-contact-stripe {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 6px;
+        background: var(--asv-cyan-500);
+    }
+
+    .asv-contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 56px;
+        align-items: start;
+    }
+
+    .asv-contact-info { }
+
+    .asv-contact-rows {
+        display: grid;
+        gap: 16px;
+        margin-top: 28px;
+    }
+
+    .asv-contact-row {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .asv-contact-row-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--asv-radius-md);
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--asv-cyan-300);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+    }
+
+    .asv-contact-row-label {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .asv-contact-row-value {
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .asv-contact-emergency {
+        margin-top: 32px;
+        padding: 20px;
+        background: rgba(15, 159, 230, 0.12);
+        border: 1px solid rgba(15, 159, 230, 0.3);
+        border-radius: var(--asv-radius-md);
+    }
+
+    .asv-contact-emergency-label {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        color: var(--asv-cyan-300);
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .asv-contact-emergency-text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+    }
+
+    // Formulario
+    .asv-contact-form-wrap {
+        background: white;
+        color: var(--fg-1);
+        padding: 32px;
+        border-radius: var(--asv-radius-md);
+        box-shadow: var(--asv-shadow-lg);
+    }
+
+    .asv-contact-form-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--asv-navy-800);
+        margin-bottom: 6px;
+    }
+
+    .asv-contact-form-subtitle {
+        font-size: 13px;
+        color: var(--fg-2);
+        margin: 0 0 20px;
+    }
+
+    .asv-form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+
+    .asv-form-field {
+        display: block;
+        margin-bottom: 14px;
+    }
+
+    .asv-form-field-full {
+        grid-column: 1 / -1;
+    }
+
+    .asv-form-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--asv-navy-800);
+        margin-bottom: 6px;
+    }
+
+    .asv-contact-form {
+        .asv-input {
+            resize: vertical;
+        }
+    }
+
+    .asv-form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .asv-form-privacy {
+        font-size: 12px;
+        color: var(--fg-2);
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+        .asv-contact-grid {
+            grid-template-columns: 1fr;
+        }
+        .asv-form-row-2 {
+            grid-template-columns: 1fr;
+        }
+    }
+}

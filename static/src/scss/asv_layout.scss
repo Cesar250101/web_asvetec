@@ -1,0 +1,188 @@
+// ============================================================
+// ASVETEC — Layout base, tipografía y componentes comunes
+// ============================================================
+
+// Aplica sólo cuando el wrapwrap tiene la clase asv-body
+.asv-body {
+    font-family: var(--asv-font-sans);
+    color: var(--fg-1);
+    background: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+}
+
+// Contenedor centrado
+.asv-body .asv-container {
+    max-width: var(--asv-page-max);
+    margin: 0 auto;
+    padding: 0 var(--asv-page-pad);
+    width: 100%;
+}
+
+// Secciones
+.asv-body .asv-section {
+    padding: 72px 0;
+}
+
+// Cabecera de sección (flex row: título + CTA)
+.asv-body .asv-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.asv-body .asv-section-sub {
+    font-size: var(--asv-fs-16);
+    color: var(--fg-2);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 0 0;
+}
+
+// Eyebrow / etiqueta superior
+.asv-body .asv-eyebrow {
+    font-family: var(--asv-font-sans);
+    font-weight: 700;
+    font-size: var(--asv-fs-12);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--asv-cyan-500);
+    margin-bottom: 10px;
+}
+
+// Headings
+.asv-body .asv-h2 {
+    font-family: var(--asv-font-sans);
+    font-weight: 800;
+    font-size: var(--asv-fs-32);
+    line-height: 1.15;
+    color: var(--asv-navy-800);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+}
+
+.asv-body .asv-h2-ondark {
+    color: white;
+    font-size: 40px;
+    line-height: 1.1;
+}
+
+.asv-body .asv-p {
+    font-size: var(--asv-fs-16);
+    line-height: 1.65;
+    color: var(--fg-2);
+    margin: 0 0 16px;
+}
+
+.asv-body .asv-p-ondark {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+// Botones
+.asv-body .asv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    font-family: var(--asv-font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: var(--asv-radius-sm);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+    white-space: nowrap;
+
+    &:active { opacity: 0.85; }
+}
+
+.asv-body .asv-btn-primary {
+    background: var(--asv-cyan-500);
+    color: white;
+    &:hover { background: var(--asv-cyan-400); color: white; }
+}
+
+.asv-body .asv-btn-dark {
+    background: var(--asv-navy-800);
+    color: white;
+    &:hover { background: var(--asv-purple-700); color: white; }
+}
+
+.asv-body .asv-btn-ghost {
+    background: transparent;
+    color: white;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    &:hover { background: rgba(255, 255, 255, 0.1); border-color: white; color: white; }
+}
+
+.asv-body .asv-btn-outline {
+    background: white;
+    color: var(--asv-navy-800);
+    border: 1.5px solid var(--asv-navy-800);
+    &:hover { background: var(--asv-navy-800); color: white; }
+}
+
+.asv-body .asv-btn-sm {
+    padding: 8px 14px;
+    font-size: 12px;
+}
+
+.asv-body .asv-btn-lg {
+    padding: 14px 28px;
+}
+
+// Hover lift para tarjetas
+.asv-body .asv-card-lift {
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--asv-shadow-md);
+    }
+}
+
+// Input y select
+.asv-body .asv-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--asv-line);
+    border-radius: var(--asv-radius-sm);
+    font-family: var(--asv-font-sans);
+    font-size: 14px;
+    color: var(--fg-1);
+    background: white;
+    outline: none;
+    transition: border-color 120ms ease, box-shadow 120ms ease;
+
+    &:focus {
+        border-color: var(--asv-cyan-500);
+        box-shadow: 0 0 0 3px rgba(15, 159, 230, 0.18);
+    }
+
+    &::placeholder { color: var(--asv-mute-400); }
+}
+
+// Badges de producto
+.asv-body .asv-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    border-radius: var(--asv-radius-xs);
+    font-family: var(--asv-font-sans);
+    text-transform: uppercase;
+}
+.asv-body .asv-badge-stock { background: rgba(47, 170, 91, 0.12); color: #1e7a3d; }
+.asv-body .asv-badge-rent  { background: var(--asv-purple-700); color: white; }
+.asv-body .asv-badge-promo { background: var(--asv-cyan-500); color: white; }
+.asv-body .asv-badge-new   { background: var(--asv-navy-800); color: white; }
+
+// Focus visible
+.asv-body *:focus-visible {
+    outline: 2px solid var(--asv-cyan-500);
+    outline-offset: 2px;
+}

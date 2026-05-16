@@ -1,0 +1,84 @@
+// ---- ASVETEC Categorías ----
+.s_asv_categories {
+    .asv-cat-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .asv-cat-card {
+        background: white;
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-md);
+        padding: 24px 22px;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-height: 168px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--asv-shadow-md);
+            border-color: var(--asv-cyan-500);
+        }
+    }
+
+    .asv-cat-num {
+        position: absolute;
+        right: 16px;
+        top: 14px;
+        font-family: var(--asv-font-display);
+        font-style: italic;
+        font-weight: 900;
+        color: rgba(54, 14, 99, 0.07);
+        font-size: 56px;
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    .asv-cat-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--asv-radius-md);
+        background: linear-gradient(135deg, rgba(15, 159, 230, 0.14), rgba(54, 14, 99, 0.10));
+        color: var(--asv-navy-800);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+    }
+
+    .asv-cat-info {
+        margin-top: auto;
+    }
+
+    .asv-cat-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--asv-navy-800);
+        display: block;
+    }
+
+    .asv-cat-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 6px;
+    }
+
+    .asv-cat-count {
+        font-size: 12px;
+        color: var(--fg-3);
+        font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+        .asv-cat-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

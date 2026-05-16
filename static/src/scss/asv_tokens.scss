@@ -1,0 +1,107 @@
+// ============================================================
+// ASVETEC — Design tokens como variables CSS
+// Basado en el ASVETEC Design System (colors_and_type.css)
+// ============================================================
+
+:root {
+    // Paleta principal
+    --asv-navy-900:   #1c1a44;
+    --asv-navy-800:   #2c2c61;
+    --asv-navy-700:   #342f5e;
+    --asv-purple-700: #360e63;
+    --asv-purple-500: #5e3a8a;
+    --asv-blue-600:   #2f5a93;
+    --asv-blue-500:   #518abc;
+    --asv-cyan-500:   #0f9fe6;
+    --asv-cyan-400:   #2bb4f0;
+    --asv-cyan-300:   #7ed0f5;
+
+    // Neutrales
+    --asv-white:      #ffffff;
+    --asv-paper:      #f7f8fa;
+    --asv-line:       #e4e6eb;
+    --asv-mute-200:   #c9ccd2;
+    --asv-mute-400:   #8a8e96;
+    --asv-ink-700:    #4a4a52;
+    --asv-ink-900:    #1a1a1f;
+
+    // Semánticos
+    --asv-success:    #2faa5b;
+    --asv-warn:       #f0a724;
+    --asv-danger:     #d24545;
+
+    // Superficies
+    --bg-page:        #ffffff;
+    --bg-paper:       var(--asv-paper);
+    --bg-card:        #ffffff;
+    --bg-banner:      var(--asv-cyan-500);
+    --bg-nav:         var(--asv-purple-700);
+    --bg-footer:      var(--asv-navy-700);
+
+    // Foregrounds
+    --fg-1:          var(--asv-ink-900);
+    --fg-2:          var(--asv-ink-700);
+    --fg-3:          var(--asv-mute-400);
+    --fg-on-dark-1:  #ffffff;
+    --fg-on-dark-2:  #c9c6e1;
+    --fg-on-cyan:    #ffffff;
+    --fg-link:       var(--asv-cyan-500);
+
+    // Tipografías
+    --asv-font-display: "Barlow Condensed", "Open Sans", system-ui, sans-serif;
+    --asv-font-sans:    "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --asv-font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+    // Escala tipográfica
+    --asv-fs-12: 0.75rem;
+    --asv-fs-14: 0.875rem;
+    --asv-fs-16: 1rem;
+    --asv-fs-18: 1.125rem;
+    --asv-fs-20: 1.25rem;
+    --asv-fs-24: 1.5rem;
+    --asv-fs-32: 2rem;
+    --asv-fs-40: 2.5rem;
+    --asv-fs-56: 3.5rem;
+
+    // Espaciado (base 4px)
+    --asv-sp-1: 4px;
+    --asv-sp-2: 8px;
+    --asv-sp-3: 12px;
+    --asv-sp-4: 16px;
+    --asv-sp-5: 24px;
+    --asv-sp-6: 32px;
+    --asv-sp-7: 48px;
+    --asv-sp-8: 64px;
+    --asv-sp-9: 96px;
+
+    // Radios
+    --asv-radius-xs:   2px;
+    --asv-radius-sm:   4px;
+    --asv-radius-md:   6px;
+    --asv-radius-lg:   10px;
+    --asv-radius-pill: 999px;
+
+    // Sombras
+    --asv-shadow-sm: 0 1px 2px rgba(20, 18, 60, 0.06);
+    --asv-shadow-md: 0 4px 12px rgba(20, 18, 60, 0.10);
+    --asv-shadow-lg: 0 12px 32px rgba(20, 18, 60, 0.14);
+
+    // Gradientes de marca
+    --asv-top-stripe:        linear-gradient(90deg, var(--asv-cyan-500) 0%, var(--asv-blue-500) 100%);
+    --asv-wordmark-gradient: linear-gradient(90deg,
+        var(--asv-navy-800) 0%,
+        var(--asv-navy-800) 30%,
+        var(--asv-blue-600) 55%,
+        var(--asv-blue-500) 80%,
+        var(--asv-cyan-500) 100%);
+
+    // Layout
+    --asv-page-max: 1440px;
+    --asv-page-pad: 48px;
+}
+
+@media (max-width: 900px) {
+    :root {
+        --asv-page-pad: 20px;
+    }
+}

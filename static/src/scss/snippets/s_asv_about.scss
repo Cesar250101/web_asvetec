@@ -1,0 +1,124 @@
+// ---- ASVETEC Nosotros ----
+.s_asv_about {
+    .asv-about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 72px;
+        align-items: center;
+    }
+
+    .asv-about-text { }
+
+    .asv-about-points {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 28px;
+        margin-top: 8px;
+    }
+
+    .asv-about-point {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .asv-about-point-icon {
+        flex: 0 0 auto;
+        width: 28px;
+        height: 28px;
+        border-radius: var(--asv-radius-sm);
+        background: var(--asv-cyan-500);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+    }
+
+    .asv-about-point-title {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--asv-navy-800);
+        margin-bottom: 2px;
+    }
+
+    .asv-about-point-desc {
+        font-size: 13px;
+        color: var(--fg-2);
+        line-height: 1.5;
+    }
+
+    .asv-about-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    // Columna visual
+    .asv-about-visual {
+        position: relative;
+    }
+
+    .asv-about-img {
+        aspect-ratio: 5/4;
+        background-color: var(--asv-navy-800);
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--asv-radius-md);
+        box-shadow: var(--asv-shadow-md);
+    }
+
+    .asv-about-float-card {
+        position: absolute;
+        left: -32px;
+        bottom: -32px;
+        background: var(--asv-navy-800);
+        color: white;
+        padding: 22px 26px;
+        border-radius: var(--asv-radius-md);
+        max-width: 280px;
+        box-shadow: var(--asv-shadow-lg);
+    }
+
+    .asv-about-float-num {
+        font-family: var(--asv-font-display);
+        font-style: italic;
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 1;
+        color: var(--asv-cyan-300);
+    }
+
+    .asv-about-float-label {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .asv-about-accent {
+        position: absolute;
+        right: -16px;
+        top: -16px;
+        width: 120px;
+        height: 120px;
+        background: var(--asv-cyan-500);
+        z-index: -1;
+        border-radius: var(--asv-radius-md);
+    }
+
+    @media (max-width: 900px) {
+        .asv-about-grid {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        .asv-about-visual {
+            margin-bottom: 48px;
+        }
+        .asv-about-float-card {
+            left: 16px;
+            bottom: -24px;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <rect width="200" height="120" fill="white"/>
+  <!-- Filter strip -->
+  <rect x="8" y="10" width="30" height="10" rx="2" fill="#2c2c61"/>
+  <rect x="42" y="10" width="40" height="10" rx="2" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="86" y="10" width="36" height="10" rx="2" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <!-- 4 product cards -->
+  <rect x="8"   y="26" width="42" height="60" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="56"  y="26" width="42" height="60" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="104" y="26" width="42" height="60" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="152" y="26" width="42" height="60" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <!-- Image areas -->
+  <rect x="9"   y="27" width="40" height="30" rx="2" fill="#f7f8fa"/>
+  <rect x="57"  y="27" width="40" height="30" rx="2" fill="#f7f8fa"/>
+  <rect x="105" y="27" width="40" height="30" rx="2" fill="#f7f8fa"/>
+  <rect x="153" y="27" width="40" height="30" rx="2" fill="#f7f8fa"/>
+  <!-- Badges -->
+  <rect x="13"  y="31" width="18" height="5" rx="1" fill="rgba(47,170,91,0.2)"/>
+  <rect x="61"  y="31" width="14" height="5" rx="1" fill="#0f9fe6"/>
+  <rect x="109" y="31" width="20" height="5" rx="1" fill="#360e63"/>
+  <rect x="157" y="31" width="16" height="5" rx="1" fill="#2c2c61"/>
+  <!-- Text + price + button -->
+  <rect x="12"  y="62" width="34" height="4" rx="1" fill="#2c2c61" opacity="0.7"/>
+  <rect x="60"  y="62" width="34" height="4" rx="1" fill="#2c2c61" opacity="0.7"/>
+  <rect x="108" y="62" width="34" height="4" rx="1" fill="#2c2c61" opacity="0.7"/>
+  <rect x="156" y="62" width="34" height="4" rx="1" fill="#2c2c61" opacity="0.7"/>
+  <rect x="12"  y="70" width="22" height="6" rx="1" fill="#0f9fe6"/>
+  <rect x="60"  y="70" width="22" height="6" rx="1" fill="#0f9fe6"/>
+  <rect x="108" y="70" width="22" height="6" rx="1" fill="#0f9fe6"/>
+  <rect x="156" y="70" width="22" height="6" rx="1" fill="#0f9fe6"/>
+  <text x="100" y="115" font-family="sans-serif" font-size="7" fill="#8a8e96" text-anchor="middle">Productos Destacados</text>
+</svg>

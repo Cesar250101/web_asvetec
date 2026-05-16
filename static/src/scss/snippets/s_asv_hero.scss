@@ -1,0 +1,189 @@
+// ---- ASVETEC Hero ----
+.s_asv_hero.asv-hero {
+    position: relative;
+    background: var(--asv-navy-900);
+
+    .asv-top-stripe {
+        height: 6px;
+        background: var(--asv-top-stripe);
+    }
+
+    .asv-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(480px, 1fr) 1.05fr;
+        min-height: 520px;
+    }
+
+    // Panel izquierdo cyan-azul
+    .asv-hero-panel {
+        background: linear-gradient(135deg, var(--asv-cyan-500) 0%, var(--asv-blue-500) 100%);
+        padding: 72px 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .asv-hero-watermark {
+        position: absolute;
+        right: -40px;
+        bottom: -40px;
+        font-family: var(--asv-font-display);
+        font-style: italic;
+        font-weight: 900;
+        font-size: 280px;
+        line-height: 0.85;
+        color: rgba(255, 255, 255, 0.06);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .asv-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 560px;
+    }
+
+    .asv-hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: var(--asv-radius-pill);
+        background: rgba(28, 26, 68, 0.45);
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+    }
+
+    .asv-hero-badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: var(--asv-radius-pill);
+        background: var(--asv-cyan-300);
+        box-shadow: 0 0 0 4px rgba(126, 208, 245, 0.25);
+        flex: 0 0 auto;
+    }
+
+    .asv-hero-title {
+        margin: 0;
+        font-family: var(--asv-font-sans);
+        font-weight: 800;
+        font-size: clamp(36px, 4.5vw, 56px);
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        color: white;
+
+        em {
+            font-style: normal;
+            opacity: 0.9;
+        }
+    }
+
+    .asv-hero-sub {
+        margin: 22px 0 32px;
+        font-size: 18px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.92);
+        max-width: 520px;
+        font-weight: 500;
+    }
+
+    .asv-hero-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .asv-hero-stats {
+        display: flex;
+        gap: 26px;
+        margin-top: 44px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .asv-hero-stat {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .asv-hero-stat-num {
+        font-family: var(--asv-font-display);
+        font-style: italic;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 1;
+        color: white;
+    }
+
+    .asv-hero-stat-label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.3;
+    }
+
+    // Panel derecho — foto
+    .asv-hero-photo {
+        background-color: var(--asv-navy-800);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .asv-hero-photo-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            rgba(15, 159, 230, 0.35) 0%,
+            rgba(0, 0, 0, 0) 30%,
+            rgba(0, 0, 0, 0.25) 100%
+        );
+    }
+
+    .asv-hero-float-card {
+        position: absolute;
+        right: 32px;
+        bottom: 32px;
+        background: rgba(28, 26, 68, 0.92);
+        color: white;
+        padding: 18px 22px;
+        border-radius: var(--asv-radius-md);
+        max-width: 320px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .asv-hero-float-eyebrow {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        color: var(--asv-cyan-300);
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+
+    .asv-hero-float-text {
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    @media (max-width: 900px) {
+        .asv-hero-grid {
+            grid-template-columns: 1fr;
+        }
+        .asv-hero-photo {
+            min-height: 280px;
+        }
+        .asv-hero-panel {
+            padding: 48px 24px;
+        }
+    }
+}

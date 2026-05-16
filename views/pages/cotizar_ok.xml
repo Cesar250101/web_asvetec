@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="asv_cotizar_ok" name="ASVETEC — Cotización enviada">
+        <t t-call="website.layout">
+            <div id="wrap" class="asv-site">
+                <div style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 96px 24px; background: var(--asv-paper);">
+                    <div style="text-align: center; max-width: 520px;">
+                        <div style="width: 72px; height: 72px; border-radius: 999px; background: rgba(47,170,91,0.15); color: #2faa5b; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <h1 style="font-family: var(--asv-font-sans); font-weight: 800; font-size: 32px; color: var(--asv-navy-800); margin: 0 0 12px;">
+                            Solicitud recibida
+                        </h1>
+                        <p style="font-size: 16px; color: var(--asv-ink-700); line-height: 1.6; margin: 0 0 32px;">
+                            Un asesor técnico de <strong>ASVETEC</strong> revisará su solicitud y
+                            responderá con cotización dentro de la jornada hábil.
+                        </p>
+                        <a href="/asvetec" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; background: var(--asv-cyan-500); color: white; font-weight: 700; font-size: 14px; border-radius: 4px; text-decoration: none;">
+                            Volver al inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

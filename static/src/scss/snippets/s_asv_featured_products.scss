@@ -1,0 +1,228 @@
+// ---- ASVETEC Productos Destacados ----
+.s_asv_featured_products {
+    .asv-prod-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .asv-nav-arrow {
+        width: 38px;
+        height: 38px;
+        border-radius: var(--asv-radius-sm);
+        background: white;
+        border: 1px solid var(--asv-line);
+        color: var(--asv-navy-800);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 120ms;
+
+        &:hover:not(:disabled) {
+            border-color: var(--asv-cyan-500);
+            color: var(--asv-cyan-500);
+        }
+
+        &:disabled {
+            color: var(--asv-mute-200);
+            cursor: not-allowed;
+        }
+    }
+
+    .asv-nav-counter {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--fg-2);
+    }
+
+    .asv-prod-filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+    }
+
+    .asv-filter-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 700;
+        font-family: var(--asv-font-sans);
+        background: white;
+        color: var(--asv-navy-800);
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-sm);
+        cursor: pointer;
+        transition: all 120ms ease;
+
+        &:hover, &.active {
+            background: var(--asv-navy-800);
+            color: white;
+            border-color: var(--asv-navy-800);
+        }
+    }
+
+    .asv-prod-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+    .asv-prod-card {
+        background: white;
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-md);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 160ms ease, box-shadow 160ms ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--asv-shadow-md);
+        }
+
+        // Hidden cards (filtered out)
+        &[data-hidden] {
+            display: none;
+        }
+    }
+
+    .asv-prod-img {
+        position: relative;
+        aspect-ratio: 4/3;
+        background: var(--asv-paper);
+        border-bottom: 1px solid var(--asv-line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        .asv-prod-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        // Fallback: SVG de la categoría escalado para verse como un ícono grande
+        .asv-prod-svg-fallback {
+            width: 60%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--asv-navy-800);
+
+            > svg {
+                width: 100%;
+                height: 100%;
+                stroke: var(--asv-navy-800);
+                stroke-width: 1.4;
+            }
+        }
+
+        .asv-badge,
+        .asv-badge-ribbon {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 3px 8px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            border-radius: var(--asv-radius-xs);
+            font-family: var(--asv-font-sans);
+            text-transform: uppercase;
+            background: var(--asv-navy-800);
+            color: white;
+            line-height: 1.4;
+
+            // El ribbon de Odoo puede traer HTML con su propio color de fondo
+            * { font-size: inherit; font-weight: inherit; }
+        }
+    }
+
+    .asv-empty-state {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 40px 0;
+        color: var(--fg-3);
+        font-size: 14px;
+    }
+
+    .asv-prod-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+    }
+
+    .asv-prod-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .asv-prod-cat {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: var(--asv-cyan-500);
+    }
+
+    .asv-prod-brand {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--fg-3);
+    }
+
+    .asv-prod-name {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--asv-navy-800);
+        min-height: 38px;
+    }
+
+    .asv-prod-sku {
+        font-size: 11px;
+        color: var(--fg-3);
+    }
+
+    .asv-prod-footer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .asv-prod-desde {
+        font-size: 11px;
+        color: var(--fg-3);
+        line-height: 1;
+    }
+
+    .asv-prod-price {
+        font-family: var(--asv-font-display);
+        font-style: italic;
+        font-weight: 900;
+        font-size: 22px;
+        color: var(--asv-navy-800);
+        line-height: 1.1;
+    }
+
+    .asv-prod-iva {
+        font-size: 10px;
+        color: var(--fg-3);
+    }
+
+    @media (max-width: 900px) {
+        .asv-prod-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

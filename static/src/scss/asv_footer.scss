@@ -1,0 +1,165 @@
+// ---- ASVETEC Footer ----
+.asv-body {
+    .asv-footer {
+        background: var(--bg-footer); // #342f5e
+        color: rgba(255, 255, 255, 0.72);
+        font-family: var(--asv-font-sans);
+        font-size: 14px;
+
+        // Franja cyan en el tope del footer
+        &::before {
+            content: '';
+            display: block;
+            height: 3px;
+            background: var(--asv-top-stripe);
+        }
+
+        .asv-container {
+            padding-top: 56px;
+            padding-bottom: 52px;
+        }
+    }
+
+    .asv-footer-grid {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr;
+        gap: 48px;
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // Columna de marca
+    .asv-footer-wordmark {
+        font-family: var(--asv-font-display);
+        font-style: italic;
+        font-weight: 900;
+        font-size: 28px;
+        letter-spacing: 0.04em;
+        background: var(--asv-wordmark-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 12px;
+    }
+
+    .asv-footer-tagline {
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 0 12px;
+        line-height: 1.5;
+    }
+
+    .asv-footer-desc {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.65;
+        margin: 0;
+        max-width: 320px;
+    }
+
+    // Columnas de links
+    .asv-footer-col-title {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--asv-cyan-300);
+        margin-bottom: 16px;
+    }
+
+    .asv-footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        a {
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            transition: color 120ms ease;
+
+            &:hover {
+                color: var(--asv-cyan-300);
+                text-decoration: none;
+            }
+        }
+    }
+
+    .asv-footer-icon {
+        flex-shrink: 0;
+        opacity: 0.5;
+    }
+
+    // Redes sociales
+    .asv-footer-social {
+        display: flex;
+        gap: 8px;
+        margin-top: 20px;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: background 120ms ease, color 120ms ease;
+
+            &:hover {
+                background: var(--asv-cyan-500);
+                color: white;
+            }
+
+            .fa {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Barra de copyright
+    .asv-footer-copyright {
+        background: var(--asv-navy-900); // #1c1a44
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        padding: 14px 0;
+
+        .asv-container {
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+
+            &:hover { color: var(--asv-cyan-300); }
+        }
+    }
+
+    .asv-footer-copyright-sep {
+        opacity: 0.3;
+    }
+}

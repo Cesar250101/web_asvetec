@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <rect width="200" height="120" fill="#2c2c61"/>
+  <!-- Cyan stripe -->
+  <rect width="200" height="5" fill="#0f9fe6"/>
+  <!-- Left info col -->
+  <rect x="8"  y="18" width="36" height="4" rx="1" fill="#7ed0f5"/>
+  <rect x="8"  y="28" width="72" height="7" rx="2" fill="white"/>
+  <rect x="8"  y="40" width="80" height="3" rx="1" fill="rgba(255,255,255,0.5)"/>
+  <rect x="8"  y="46" width="70" height="3" rx="1" fill="rgba(255,255,255,0.5)"/>
+  <!-- Contact rows -->
+  <rect x="8"  y="56" width="12" height="12" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="24" y="58" width="50" height="3" rx="1" fill="rgba(255,255,255,0.7)"/>
+  <rect x="24" y="63" width="38" height="3" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="8"  y="72" width="12" height="12" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="24" y="74" width="50" height="3" rx="1" fill="rgba(255,255,255,0.7)"/>
+  <rect x="24" y="79" width="42" height="3" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <!-- Right form -->
+  <rect x="100" y="10" width="92" height="100" rx="3" fill="white"/>
+  <rect x="108" y="18" width="50" height="6" rx="1" fill="#2c2c61" opacity="0.8"/>
+  <rect x="108" y="30" width="76" height="10" rx="2" fill="#f7f8fa" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="108" y="44" width="76" height="10" rx="2" fill="#f7f8fa" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="108" y="58" width="76" height="20" rx="2" fill="#f7f8fa" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="134" y="86" width="42" height="14" rx="2" fill="#0f9fe6"/>
+  <text x="100" y="115" font-family="sans-serif" font-size="7" fill="#7ed0f5" text-anchor="middle">Contacto y Cotización</text>
+</svg>

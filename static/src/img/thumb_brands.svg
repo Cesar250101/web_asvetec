@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <rect width="200" height="120" fill="#f7f8fa"/>
+  <rect y="45" width="200" height="30" fill="white" stroke="#e4e6eb" stroke-width="0"/>
+  <!-- Brand tiles in marquee -->
+  <rect x="5"   y="48" width="36" height="24" rx="0" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="44"  y="48" width="36" height="24" rx="0" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="83"  y="48" width="36" height="24" rx="0" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="122" y="48" width="36" height="24" rx="0" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="161" y="48" width="36" height="24" rx="0" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <!-- Brand text placeholders -->
+  <text x="23"  y="63" font-family="sans-serif" font-weight="bold" font-size="7" fill="#000" text-anchor="middle">Kärcher</text>
+  <text x="62"  y="63" font-family="sans-serif" font-weight="bold" font-size="7" fill="#cc0000" text-anchor="middle">BOSCH</text>
+  <text x="101" y="63" font-family="sans-serif" font-weight="bold" font-size="7" fill="#f47920" text-anchor="middle">STIHL</text>
+  <text x="140" y="63" font-family="sans-serif" font-weight="bold" font-size="7" fill="#003a70" text-anchor="middle">Schulz</text>
+  <text x="179" y="63" font-family="sans-serif" font-weight="bold" font-size="6" fill="#cc1f24" text-anchor="middle">JB</text>
+  <!-- Eyebrow -->
+  <rect x="8" y="30" width="60" height="4" rx="1" fill="#0f9fe6" opacity="0.5"/>
+  <text x="100" y="115" font-family="sans-serif" font-size="7" fill="#8a8e96" text-anchor="middle">Marcas Representadas</text>
+</svg>

@@ -1,0 +1,646 @@
+// ============================================================
+// ASVETEC — Tienda (/shop) — override del estilo nativo Odoo
+// Todos los selectores bajo .asv-body para no afectar otros sitios
+// ============================================================
+
+.asv-body {
+
+    // ── Fondo general de la página ─────────────────────────────────────────
+    .o_wsale_products_page {
+        background: var(--asv-paper);
+        min-height: 70vh;
+    }
+
+    .oe_website_sale {
+        padding-top: 28px;
+        padding-bottom: 48px;
+        font-family: var(--asv-font-sans);
+    }
+
+    // ── Sidebar izquierdo — Categorías ────────────────────────────────────
+    #products_grid_before {
+        .o_wsale_products_grid_before_rail {
+            padding-top: 4px;
+        }
+    }
+
+    .products_categories {
+        background: white;
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-md);
+        padding: 16px;
+        margin-bottom: 16px;
+
+        // Título "Categorías"
+        h6, .h6 {
+            font-family: var(--asv-font-sans);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--asv-navy-800);
+            margin: 0 0 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--asv-line);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 10px;
+            border-radius: var(--asv-radius-sm);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--fg-2);
+            text-decoration: none;
+            transition: background 100ms ease, color 100ms ease;
+
+            &:hover {
+                background: var(--asv-paper);
+                color: var(--asv-navy-800);
+            }
+        }
+
+        // Categoría activa
+        li.active > a,
+        a.active {
+            background: var(--asv-paper);
+            color: var(--asv-cyan-500);
+            font-weight: 700;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: var(--asv-cyan-500);
+                flex-shrink: 0;
+            }
+        }
+
+        // Sub-categorías
+        .o_shop_categories_nav {
+            > ul { margin-top: 2px; }
+        }
+    }
+
+    // Filtro de atributos
+    .products_attributes_filters {
+        background: white;
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-md);
+        padding: 16px;
+        margin-bottom: 16px;
+
+        h6, .h6 {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--asv-navy-800);
+            margin: 0 0 10px;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--asv-cyan-500);
+            border-color: var(--asv-cyan-500);
+        }
+
+        .form-check-label {
+            font-size: 13px;
+            color: var(--fg-2);
+        }
+    }
+
+    // ── Barra superior: búsqueda + ordenar + toggle ───────────────────────
+    .products_header {
+        background: white;
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-md);
+        padding: 10px 14px;
+        margin-bottom: 16px;
+        gap: 10px;
+    }
+
+    // Caja de búsqueda
+    .o_wsale_products_searchbar_form {
+        .o_searchbar_input,
+        input[type="search"],
+        input[type="text"] {
+            border: 1px solid var(--asv-line) !important;
+            border-radius: var(--asv-radius-sm) !important;
+            font-family: var(--asv-font-sans);
+            font-size: 13px;
+            color: var(--fg-1);
+            background: var(--asv-paper) !important;
+            padding: 8px 12px;
+            height: 36px;
+
+            &::placeholder { color: var(--asv-mute-400); }
+            &:focus {
+                border-color: var(--asv-cyan-500) !important;
+                box-shadow: 0 0 0 3px rgba(15, 159, 230, 0.15) !important;
+                background: white !important;
+            }
+        }
+
+        // Botón lupa
+        button[type="submit"],
+        .btn {
+            background: var(--asv-navy-800) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: var(--asv-radius-sm) !important;
+            font-size: 13px;
+            height: 36px;
+            padding: 0 12px;
+            transition: background 120ms ease;
+
+            &:hover { background: var(--asv-cyan-500) !important; }
+        }
+    }
+
+    // Ordenar / Sort dropdown
+    .o_wsale_sort_btn,
+    .o_wsale_sort {
+        .btn, .dropdown-toggle {
+            font-family: var(--asv-font-sans);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--fg-2) !important;
+            background: transparent !important;
+            border: 1px solid var(--asv-line) !important;
+            border-radius: var(--asv-radius-sm) !important;
+            height: 36px;
+            padding: 0 12px;
+
+            &:hover {
+                border-color: var(--asv-cyan-500) !important;
+                color: var(--asv-cyan-500) !important;
+            }
+        }
+
+        .dropdown-menu {
+            border: 1px solid var(--asv-line);
+            border-radius: var(--asv-radius-md);
+            box-shadow: var(--asv-shadow-md);
+            padding: 4px;
+
+            .dropdown-item {
+                font-size: 13px;
+                border-radius: var(--asv-radius-sm);
+                padding: 7px 10px;
+
+                &:hover, &.active {
+                    background: var(--asv-paper);
+                    color: var(--asv-cyan-500);
+                }
+            }
+        }
+    }
+
+    // Toggle grid / list
+    .o_wsale_grid_toggle,
+    .o_wsale_layout_mode_selector {
+        display: flex;
+        gap: 4px;
+
+        .btn {
+            width: 34px !important;
+            height: 34px !important;
+            padding: 0 !important;
+            border: 1px solid var(--asv-line) !important;
+            border-radius: var(--asv-radius-sm) !important;
+            color: var(--asv-mute-400) !important;
+            background: transparent !important;
+
+            &.active, &:hover {
+                background: var(--asv-navy-800) !important;
+                border-color: var(--asv-navy-800) !important;
+                color: white !important;
+            }
+        }
+    }
+
+    // Filtro móvil
+    button[data-bs-target="#o_wsale_offcanvas"] {
+        background: transparent !important;
+        border: 1px solid var(--asv-line) !important;
+        border-radius: var(--asv-radius-sm) !important;
+        color: var(--fg-2) !important;
+        height: 36px;
+        width: 36px;
+        padding: 0;
+
+        &:hover {
+            border-color: var(--asv-cyan-500) !important;
+            color: var(--asv-cyan-500) !important;
+        }
+    }
+
+    // ── Filmstrip de categorías (pills en la parte superior) ──────────────
+    .o_wsale_filmstrip_wrapper,
+    #o_wsale_filmstrip_categories {
+        margin-bottom: 16px;
+    }
+
+    .o_wsale_filmstrip {
+        gap: 8px;
+        padding: 4px 0;
+
+        .o_wsale_filmstrip_item {
+            background: white !important;
+            border: 1px solid var(--asv-line) !important;
+            border-radius: var(--asv-radius-pill) !important;
+            padding: 8px 16px !important;
+            font-size: 13px !important;
+            font-weight: 700 !important;
+            font-family: var(--asv-font-sans) !important;
+            color: var(--asv-navy-800) !important;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 120ms ease;
+
+            .o_wsale_filmstrip_item_icon {
+                width: 28px !important;
+                height: 28px !important;
+                border-radius: 50% !important;
+                margin-right: 6px;
+            }
+
+            &:hover, &.active {
+                background: var(--asv-navy-800) !important;
+                border-color: var(--asv-navy-800) !important;
+                color: white !important;
+            }
+        }
+    }
+
+    // Flechas del filmstrip
+    .o_wsale_filmstrip_nav_btn {
+        background: white !important;
+        border: 1px solid var(--asv-line) !important;
+        color: var(--asv-navy-800) !important;
+        border-radius: var(--asv-radius-sm) !important;
+        width: 32px;
+        height: 32px;
+        transition: all 120ms ease;
+
+        &:hover {
+            border-color: var(--asv-cyan-500) !important;
+            color: var(--asv-cyan-500) !important;
+        }
+    }
+
+    // ── Grid de productos — tabla Odoo ────────────────────────────────────
+    .o_wsale_products_grid_table_wrapper {
+        padding-top: 0 !important;
+
+        table.table {
+            border-collapse: separate;
+            border-spacing: 12px;
+            margin: -12px !important;
+            background: transparent !important;
+
+            tbody tr td {
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                vertical-align: top;
+            }
+        }
+    }
+
+    // ── Tarjeta de producto ───────────────────────────────────────────────
+    .oe_product {
+        padding: 0 !important;
+        height: 100%;
+    }
+
+    .o_wsale_product_grid_wrapper {
+        height: 100%;
+    }
+
+    .oe_product_cart {
+        background: white !important;
+        border: 1px solid var(--asv-line) !important;
+        border-radius: var(--asv-radius-md) !important;
+        overflow: hidden;
+        flex-direction: column !important;
+        transition: transform 160ms ease, box-shadow 160ms ease;
+        height: 100%;
+        min-height: 260px;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--asv-shadow-md);
+            border-color: var(--asv-cyan-500) !important;
+        }
+    }
+
+    // Imagen
+    .oe_product_image {
+        width: 100% !important;
+        flex-grow: 0 !important;
+        flex-shrink: 0 !important;
+        aspect-ratio: 4 / 3;
+        background: var(--asv-paper);
+        border-bottom: 1px solid var(--asv-line);
+
+        .oe_product_image_link {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .oe_product_image_img_wrapper {
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+        }
+
+        img {
+            object-fit: contain;
+            padding: 8px;
+        }
+    }
+
+    // Ribbon / badge "En stock"
+    .o_ribbon {
+        font-family: var(--asv-font-sans) !important;
+        font-size: 10px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        border-radius: var(--asv-radius-xs) !important;
+        padding: 3px 8px !important;
+        top: 10px !important;
+        left: 10px !important;
+    }
+
+    // Información del producto
+    .o_wsale_product_information {
+        padding: 12px 14px 14px !important;
+        flex-direction: column !important;
+        gap: 6px;
+    }
+
+    .o_wsale_product_information_text {
+        flex-grow: 1;
+    }
+
+    .o_wsale_products_item_title {
+        margin: 0 0 4px !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        line-height: 1.35 !important;
+
+        a.text-primary {
+            color: var(--asv-navy-800) !important;
+            text-decoration: none !important;
+
+            &:hover { color: var(--asv-cyan-500) !important; }
+        }
+    }
+
+    // Precio
+    .product_price {
+        .h6 {
+            font-family: var(--asv-font-sans) !important;
+            font-size: 15px !important;
+            font-weight: 800 !important;
+            color: var(--asv-navy-800) !important;
+        }
+
+        del .small {
+            font-size: 11px !important;
+            color: var(--asv-mute-400) !important;
+        }
+    }
+
+    // Pie de tarjeta: precio + botón
+    .o_wsale_product_sub {
+        gap: 8px;
+        padding: 8px 0 0 !important;
+        border-top: 1px solid var(--asv-line);
+        margin-top: 8px;
+    }
+
+    .o_wsale_product_btn {
+        .btn,
+        .a-submit {
+            background: var(--asv-cyan-500) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: var(--asv-radius-sm) !important;
+            font-size: 12px !important;
+            font-weight: 700 !important;
+            padding: 6px 12px !important;
+            transition: background 120ms ease;
+
+            &:hover { background: var(--asv-cyan-400) !important; }
+        }
+    }
+
+    // Badge "No publicado" — menos agresivo
+    .oe_product_cart .btn-danger {
+        font-size: 9px !important;
+        font-weight: 800 !important;
+        padding: 2px 6px !important;
+        border-radius: var(--asv-radius-xs) !important;
+        background: var(--asv-danger) !important;
+        border: none !important;
+        vertical-align: middle;
+        letter-spacing: 0.04em;
+    }
+
+    // ── Paginación ────────────────────────────────────────────────────────
+    .products_pager {
+        .page-link {
+            font-family: var(--asv-font-sans);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--asv-navy-800);
+            border: 1px solid var(--asv-line);
+            border-radius: var(--asv-radius-sm) !important;
+            padding: 7px 12px;
+            margin: 0 2px;
+            transition: all 120ms ease;
+
+            &:hover {
+                background: var(--asv-navy-800);
+                border-color: var(--asv-navy-800);
+                color: white;
+            }
+        }
+
+        .page-item.active .page-link {
+            background: var(--asv-cyan-500) !important;
+            border-color: var(--asv-cyan-500) !important;
+            color: white;
+        }
+
+        .page-item.disabled .page-link {
+            color: var(--asv-mute-200);
+            border-color: var(--asv-line);
+            background: transparent;
+        }
+    }
+
+    // ── Breadcrumb ────────────────────────────────────────────────────────
+    .breadcrumb {
+        font-size: 12px;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 12px;
+
+        .breadcrumb-item {
+            color: var(--asv-mute-400);
+
+            a {
+                color: var(--asv-cyan-500);
+                text-decoration: none;
+                &:hover { text-decoration: underline; }
+            }
+
+            &.active { color: var(--fg-2); }
+
+            & + .breadcrumb-item::before { color: var(--asv-mute-200); }
+        }
+    }
+
+    // ── Offcanvas (filtros móvil) ─────────────────────────────────────────
+    #o_wsale_offcanvas {
+        .offcanvas-header {
+            background: var(--asv-navy-800);
+            color: white;
+
+            .btn-close { filter: invert(1); }
+        }
+
+        .offcanvas-body {
+            background: var(--asv-paper);
+            font-family: var(--asv-font-sans);
+        }
+    }
+
+    // ── Filmstrip ASVETEC — pills con ícono SVG ───────────────────────────
+    .o_wsale_filmstip_container {
+        background: white;
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-md);
+        padding: 10px 14px;
+        margin-bottom: 16px;
+    }
+
+    .o_wsale_filmstip_wrapper {
+        scrollbar-width: none;
+        &::-webkit-scrollbar { display: none; }
+    }
+
+    .asv-filmstrip-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border: 1px solid var(--asv-line);
+        border-radius: var(--asv-radius-pill);
+        background: var(--asv-paper);
+        font-family: var(--asv-font-sans);
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--asv-navy-800);
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: all 120ms ease;
+        user-select: none;
+
+        &:hover {
+            background: var(--asv-navy-800);
+            border-color: var(--asv-navy-800);
+            color: white;
+
+            .asv-filmstrip-icon svg {
+                stroke: white;
+            }
+        }
+
+        &.active {
+            background: var(--asv-navy-800);
+            border-color: var(--asv-navy-800);
+            color: white;
+
+            .asv-filmstrip-icon svg {
+                stroke: white;
+            }
+        }
+    }
+
+    .asv-filmstrip-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--asv-navy-800);
+            stroke-width: 1.8;
+            fill: none;
+            transition: stroke 120ms ease;
+        }
+    }
+
+    // Oculta el radio input nativo de Odoo (usamos label estilado)
+    .o_wsale_filmstip .btn-check { display: none !important; }
+
+    // ── Modo lista ────────────────────────────────────────────────────────
+    .o_wsale_layout_list {
+        .oe_product_cart {
+            flex-direction: row !important;
+            min-height: 100px;
+
+            .oe_product_image {
+                aspect-ratio: unset;
+                width: 120px !important;
+                flex-shrink: 0;
+                border-bottom: none;
+                border-right: 1px solid var(--asv-line);
+            }
+        }
+    }
+
+    // ── Responsive ────────────────────────────────────────────────────────
+    @media (max-width: 991px) {
+        .o_wsale_products_grid_table_wrapper table.table {
+            border-spacing: 8px;
+            margin: -8px !important;
+        }
+
+        .products_header {
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .o_wsale_products_grid_table_wrapper table.table {
+            border-spacing: 6px;
+            margin: -6px !important;
+        }
+    }
+}

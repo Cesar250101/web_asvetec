@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Reemplaza el footer nativo de Odoo con el footer de ASVETEC.
+        Solo se activa cuando el sitio web se llama 'ASVETEC'.
+        Las redes sociales usan los mismos URLs /website/social/* de Odoo
+        para que sigan siendo configurables desde el backend.
+    -->
+    <template id="asv_footer" inherit_id="website.footer_custom"
+              name="ASVETEC Footer" priority="20">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <t t-if="website and website.name == 'ASVETEC'">
+                <div id="footer" t-ignore="true" t-if="not no_footer">
+                    <footer class="asv-footer">
+                        <div class="asv-container">
+                            <div class="asv-footer-grid">
+
+                                <!-- Col 1: marca + descripción -->
+                                <div class="asv-footer-brand">
+                                    <div class="asv-footer-wordmark">ASVETEC</div>
+                                    <p class="asv-footer-tagline">
+                                        RyS ASVETEC ltda.<br/>
+                                        Soluciones industriales para el norte de Chile
+                                    </p>
+                                    <p class="asv-footer-desc">
+                                        Equipos de limpieza industrial, generadores, compresores,
+                                        herramientas y arriendo de equipos con respaldo técnico
+                                        en faena. Antofagasta, II Región.
+                                    </p>
+                                </div>
+
+                                <!-- Col 2: navegación -->
+                                <div class="asv-footer-col">
+                                    <div class="asv-footer-col-title">Navegación</div>
+                                    <ul class="asv-footer-links">
+                                        <li><a href="/asvetec">Inicio</a></li>
+                                        <li><a href="/shop">Catálogo</a></li>
+                                        <li><a href="/asvetec#nosotros">Quiénes somos</a></li>
+                                        <li><a href="/asvetec#servicios">Servicios</a></li>
+                                        <li><a href="/asvetec#contacto">Contacto</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Col 3: contacto + redes sociales -->
+                                <div class="asv-footer-col">
+                                    <div class="asv-footer-col-title">Contacto</div>
+                                    <ul class="asv-footer-links">
+                                        <li>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2" class="asv-footer-icon">
+                                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                            </svg>
+                                            <a href="tel:+56552936063">+56 55 293 6063</a>
+                                        </li>
+                                        <li>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2" class="asv-footer-icon">
+                                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                                <path d="M2 7l10 7 10-7"/>
+                                            </svg>
+                                            <a href="mailto:ventas@asvetec.cl">ventas@asvetec.cl</a>
+                                        </li>
+                                        <li>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2" class="asv-footer-icon">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                                <circle cx="12" cy="10" r="3"/>
+                                            </svg>
+                                            Antofagasta, II Región · Chile
+                                        </li>
+                                    </ul>
+
+                                    <!-- Redes sociales — URLs manejadas por Odoo backend -->
+                                    <div class="s_social_media asv-footer-social o_not_editable"
+                                         data-snippet="s_social_media"
+                                         data-name="Social Media"
+                                         contenteditable="false">
+                                        <a href="/website/social/facebook"
+                                           class="s_social_media_facebook" target="_blank">
+                                            <i class="fa fa-facebook"/>
+                                        </a>
+                                        <a href="/website/social/twitter"
+                                           class="s_social_media_twitter" target="_blank">
+                                            <i class="fa fa-twitter"/>
+                                        </a>
+                                        <a href="/website/social/linkedin"
+                                           class="s_social_media_linkedin" target="_blank">
+                                            <i class="fa fa-linkedin"/>
+                                        </a>
+                                        <a href="/website/social/instagram"
+                                           class="s_social_media_instagram" target="_blank">
+                                            <i class="fa fa-instagram"/>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Barra de copyright -->
+                        <div class="asv-footer-copyright">
+                            <div class="asv-container">
+                                <span>© <t t-esc="datetime.date.today().year"/> RyS ASVETEC ltda. · Todos los derechos reservados</span>
+                                <span class="asv-footer-copyright-sep">·</span>
+                                <a href="/asvetec">asvetec.cl</a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </t>
+            <t t-else="">
+                <!-- Footer estándar de Odoo para otros sitios web -->
+                <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+                    <section class="s_text_block pt40 pb16" data-snippet="s_text_block" data-name="Text">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2 pt24 pb24">
+                                    <h5 class="mb-3">Useful Links</h5>
+                                    <ul class="list-unstyled">
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Products</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">Legal</a></li>
+                                        <li><a href="/contactus">Contact us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 pt24 pb24">
+                                    <h5 class="mb-3">About us</h5>
+                                    <p>We are a team of passionate people whose goal is to improve everyone's life through disruptive products.</p>
+                                </div>
+                                <div id="connect" class="col-lg-4 offset-lg-1 pt24 pb24">
+                                    <h5 class="mb-3">Connect with us</h5>
+                                    <div class="s_social_media text-start o_not_editable"
+                                         data-snippet="s_social_media" data-name="Social Media"
+                                         contenteditable="false">
+                                        <a href="/website/social/facebook" class="s_social_media_facebook" target="_blank">
+                                            <i class="fa fa-facebook rounded-circle shadow-sm o_editable_media"/>
+                                        </a>
+                                        <a href="/website/social/twitter" class="s_social_media_twitter" target="_blank">
+                                            <i class="fa fa-twitter rounded-circle shadow-sm o_editable_media"/>
+                                        </a>
+                                        <a href="/website/social/linkedin" class="s_social_media_linkedin" target="_blank">
+                                            <i class="fa fa-linkedin rounded-circle shadow-sm o_editable_media"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

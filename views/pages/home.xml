@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="asv_home" name="ASVETEC — Inicio" key="web_asvetec.asv_home" track="1">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'homepage'"/>
+            <div id="wrap" class="asv-site">
+
+                <!-- Área editable: el editor permite arrastrar, quitar y reordenar snippets -->
+                <div class="oe_structure" id="oe_structure_asv_home_main">
+                    <t t-call="web_asvetec.s_asv_hero"/>
+                    <t t-call="web_asvetec.s_asv_trust_bar"/>
+                    <t t-call="web_asvetec.s_asv_categories"/>
+                    <t t-call="web_asvetec.s_asv_featured_products"/>
+                    <t t-call="web_asvetec.s_asv_about"/>
+                    <t t-call="web_asvetec.s_asv_brands"/>
+                    <t t-call="web_asvetec.s_asv_services"/>
+                    <t t-call="web_asvetec.s_asv_contact"/>
+                </div>
+
+            </div>
+        </t>
+    </template>
+
+    <record id="asv_home_page" model="website.page">
+        <field name="name">ASVETEC Inicio</field>
+        <field name="url">/asvetec</field>
+        <field name="view_id" ref="asv_home"/>
+        <field name="website_id" ref="website_asvetec"/>
+        <field name="is_published">True</field>
+    </record>
+</odoo>

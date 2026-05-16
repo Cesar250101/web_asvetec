@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- noupdate="0" → se carga en instalación Y actualización del módulo -->
+
+    <record id="cat_limpieza_industrial" model="product.public.category">
+        <field name="name">Limpieza Industrial</field>
+        <field name="sequence">10</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/><circle cx="12" cy="13" r="1.5"/></svg>]]></field>
+    </record>
+
+    <record id="cat_equipos_taller" model="product.public.category">
+        <field name="name">Equipos de Taller</field>
+        <field name="sequence">20</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-7 7 2 2 7-7a4 4 0 0 0 5.4-5.4l-2 2-1.4-1.4z"/></svg>]]></field>
+    </record>
+
+    <record id="cat_generadores" model="product.public.category">
+        <field name="name">Generadores</field>
+        <field name="sequence">30</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>]]></field>
+    </record>
+
+    <record id="cat_arriendo" model="product.public.category">
+        <field name="name">Arriendo</field>
+        <field name="sequence">40</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M2 11h20"/></svg>]]></field>
+    </record>
+
+    <record id="cat_hogar_jardin" model="product.public.category">
+        <field name="name">Hogar y Jardín</field>
+        <field name="sequence">50</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v11h14V10"/></svg>]]></field>
+    </record>
+
+    <record id="cat_herramientas" model="product.public.category">
+        <field name="name">Herramientas</field>
+        <field name="sequence">60</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21l9-9"/><path d="M14.5 4.5a4.5 4.5 0 0 1 6 6l-3 3-6-6z"/></svg>]]></field>
+    </record>
+
+    <record id="cat_accesorios" model="product.public.category">
+        <field name="name">Accesorios</field>
+        <field name="sequence">70</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 0 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 0 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 0 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 0 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>]]></field>
+    </record>
+
+    <record id="cat_insumos" model="product.public.category">
+        <field name="name">Insumos</field>
+        <field name="sequence">80</field>
+        <field name="asv_svg_icon"><![CDATA[<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 2v6.6L4.6 18.2A2 2 0 0 0 6.3 21h11.4a2 2 0 0 0 1.7-2.8L14 8.6V2"/><path d="M8 2h8"/><path d="M7 14h10"/></svg>]]></field>
+    </record>
+
+</odoo>

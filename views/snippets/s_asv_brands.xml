@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_asv_brands" name="ASVETEC Marcas">
+        <section class="s_asv_brands asv-brands" data-snippet="s_asv_brands">
+            <div class="asv-container">
+                <div class="asv-brands-header">
+                    <div class="asv-eyebrow" style="margin: 0;">Marcas que representamos</div>
+                    <a href="/shop" class="asv-brands-ver-todas">Ver todas →</a>
+                </div>
+            </div>
+
+            <!-- Marquee infinito -->
+            <div class="asv-brands-track-wrap">
+                <div class="asv-brands-track">
+                    <!-- Set 1 -->
+                    <div class="asv-brand-tile"><span class="asv-brand-karcher">Kärcher</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-bosch">BOSCH</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-stihl">STIHL</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-schulz">Schulz</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-johnbean">JOHN BEAN</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-gladiator">GLADIATOR</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-comet">Comet</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-rotary">Rotary</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-peak">PEAK</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-flexbimec">Flexbimec</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-sds">SDS</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-indura">Indura</span></div>
+                    <!-- Set 2 (duplicado para loop continuo) -->
+                    <div class="asv-brand-tile"><span class="asv-brand-karcher">Kärcher</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-bosch">BOSCH</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-stihl">STIHL</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-schulz">Schulz</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-johnbean">JOHN BEAN</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-gladiator">GLADIATOR</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-comet">Comet</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-rotary">Rotary</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-peak">PEAK</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-flexbimec">Flexbimec</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-sds">SDS</span></div>
+                    <div class="asv-brand-tile"><span class="asv-brand-indura">Indura</span></div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

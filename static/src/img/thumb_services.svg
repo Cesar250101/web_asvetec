@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <rect width="200" height="120" fill="#f7f8fa"/>
+  <!-- 4 service cards -->
+  <rect x="8"   y="20" width="42" height="72" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="56"  y="20" width="42" height="72" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="104" y="20" width="42" height="72" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <rect x="152" y="20" width="42" height="72" rx="3" fill="white" stroke="#e4e6eb" stroke-width="1"/>
+  <!-- Service icons -->
+  <rect x="14"  y="28" width="14" height="14" rx="2" fill="#0f9fe6"/>
+  <rect x="62"  y="28" width="14" height="14" rx="2" fill="#0f9fe6"/>
+  <rect x="110" y="28" width="14" height="14" rx="2" fill="#0f9fe6"/>
+  <rect x="158" y="28" width="14" height="14" rx="2" fill="#0f9fe6"/>
+  <!-- Tags -->
+  <rect x="32"  y="30" width="14" height="5" rx="1" fill="rgba(54,14,99,0.12)"/>
+  <rect x="80"  y="30" width="14" height="5" rx="1" fill="rgba(54,14,99,0.12)"/>
+  <rect x="128" y="30" width="14" height="5" rx="1" fill="rgba(54,14,99,0.12)"/>
+  <rect x="176" y="30" width="14" height="5" rx="1" fill="rgba(54,14,99,0.12)"/>
+  <!-- Title + desc -->
+  <rect x="12"  y="48" width="34" height="5" rx="1" fill="#2c2c61" opacity="0.8"/>
+  <rect x="60"  y="48" width="34" height="5" rx="1" fill="#2c2c61" opacity="0.8"/>
+  <rect x="108" y="48" width="34" height="5" rx="1" fill="#2c2c61" opacity="0.8"/>
+  <rect x="156" y="48" width="34" height="5" rx="1" fill="#2c2c61" opacity="0.8"/>
+  <rect x="12"  y="58" width="34" height="3" rx="1" fill="#8a8e96"/>
+  <rect x="60"  y="58" width="34" height="3" rx="1" fill="#8a8e96"/>
+  <rect x="108" y="58" width="34" height="3" rx="1" fill="#8a8e96"/>
+  <rect x="156" y="58" width="34" height="3" rx="1" fill="#8a8e96"/>
+  <rect x="12"  y="64" width="28" height="3" rx="1" fill="#8a8e96"/>
+  <rect x="60"  y="64" width="28" height="3" rx="1" fill="#8a8e96"/>
+  <rect x="108" y="64" width="28" height="3" rx="1" fill="#8a8e96"/>
+  <rect x="156" y="64" width="28" height="3" rx="1" fill="#8a8e96"/>
+  <!-- Link -->
+  <rect x="12"  y="80" width="24" height="5" rx="1" fill="#0f9fe6" opacity="0.6"/>
+  <rect x="60"  y="80" width="24" height="5" rx="1" fill="#0f9fe6" opacity="0.6"/>
+  <rect x="108" y="80" width="24" height="5" rx="1" fill="#0f9fe6" opacity="0.6"/>
+  <rect x="156" y="80" width="24" height="5" rx="1" fill="#0f9fe6" opacity="0.6"/>
+  <text x="100" y="115" font-family="sans-serif" font-size="7" fill="#8a8e96" text-anchor="middle">Servicios en Terreno</text>
+</svg>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_asv_featured_products" name="ASVETEC Productos Destacados">
+        <section class="s_asv_featured_products asv-section" data-snippet="s_asv_featured_products"
+                 style="background: white;">
+            <!-- Consultas self-contained -->
+            <t t-set="asv_ribbon"
+               t-value="request.env['product.ribbon'].sudo().search([('html', 'ilike', 'en stock')], limit=1)"/>
+            <t t-set="asv_featured_products"
+               t-value="request.env['product.template'].sudo().search([('website_ribbon_id', '=', asv_ribbon.id)], order='sequence asc, name asc') if asv_ribbon else request.env['product.template'].sudo().browse([])"/>
+            <t t-set="asv_filter_categories"
+               t-value="asv_featured_products.mapped('public_categ_ids').sorted(key=lambda c: (c.sequence, c.name))"/>
+            <!-- Pool de íconos para productos sin categoría SVG — ciclo por índice -->
+            <t t-set="asv_icon_pool"
+               t-value="request.env['product.public.category'].sudo().search([('asv_svg_icon', '!=', False)], order='sequence asc')"/>
+
+            <div class="asv-container">
+                <div class="asv-section-header">
+                    <div>
+                        <div class="asv-eyebrow">Productos destacados</div>
+                        <h2 class="asv-h2">Equipos en stock para despacho inmediato</h2>
+                    </div>
+                    <div class="asv-prod-nav" aria-label="Navegación de productos">
+                        <button class="asv-nav-arrow" data-asv-prod-prev="1" aria-label="Anterior">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <span class="asv-nav-counter">
+                            <b class="asv-prod-page-cur">1</b> / <span class="asv-prod-page-tot">1</span>
+                        </span>
+                        <button class="asv-nav-arrow" data-asv-prod-next="1" aria-label="Siguiente">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filtros dinámicos -->
+                <div class="asv-prod-filters">
+                    <button class="asv-filter-btn active" data-asv-filter="Todos">Todos</button>
+                    <t t-foreach="asv_filter_categories" t-as="fcat">
+                        <button class="asv-filter-btn" t-att-data-asv-filter="fcat.name">
+                            <t t-esc="fcat.name"/>
+                        </button>
+                    </t>
+                </div>
+
+                <!-- Grid de productos -->
+                <div class="asv-prod-grid">
+                    <t t-foreach="asv_featured_products" t-as="product">
+                        <t t-set="prod_cats" t-value="[c.name for c in product.public_categ_ids]"/>
+                        <t t-set="first_cat" t-value="product.public_categ_ids[:1]"/>
+
+                        <!-- Determina el SVG a mostrar:
+                             1. SVG de la categoría del producto
+                             2. SVG del pool ciclado por índice (para productos sin categoría) -->
+                        <t t-if="first_cat and first_cat.asv_svg_icon"
+                           t-set="asv_card_svg" t-value="first_cat.asv_svg_icon"/>
+                        <t t-elif="asv_icon_pool"
+                           t-set="asv_card_svg"
+                           t-value="asv_icon_pool[product_index % len(asv_icon_pool)].asv_svg_icon"/>
+                        <t t-else=""
+                           t-set="asv_card_svg" t-value="False"/>
+
+                        <article class="asv-prod-card"
+                                 t-att-data-categories="'[' + ','.join(['&quot;' + c + '&quot;' for c in prod_cats]) + ']'"
+                                 t-att-data-category="prod_cats[0] if prod_cats else ''">
+                            <div class="asv-prod-img">
+                                <!-- Siempre muestra el ícono SVG de la categoría -->
+                                <t t-if="asv_card_svg">
+                                    <div class="asv-prod-svg-fallback">
+                                        <t t-raw="asv_card_svg"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <!-- Ícono genérico si no hay ningún SVG disponible -->
+                                    <div class="asv-prod-svg-fallback">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                            <path d="M16 7V5a2 2 0 0 0-4 0v2"/>
+                                            <line x1="12" y1="12" x2="12" y2="16"/>
+                                            <circle cx="12" cy="12" r="1"/>
+                                        </svg>
+                                    </div>
+                                </t>
+                                <!-- Ribbon / badge -->
+                                <t t-if="product.website_ribbon_id">
+                                    <span class="asv-badge asv-badge-ribbon">
+                                        <t t-raw="product.website_ribbon_id.html"/>
+                                    </span>
+                                </t>
+                            </div>
+                            <div class="asv-prod-body">
+                                <div class="asv-prod-meta">
+                                    <span class="asv-prod-cat">
+                                        <t t-esc="prod_cats[0] if prod_cats else ''"/>
+                                    </span>
+                                </div>
+                                <h3 class="asv-prod-name"><t t-esc="product.name"/></h3>
+                                <t t-if="product.default_code">
+                                    <div class="asv-prod-sku">SKU · <t t-esc="product.default_code"/></div>
+                                </t>
+                                <div class="asv-prod-footer">
+                                    <div>
+                                        <t t-if="product.list_price">
+                                            <div class="asv-prod-desde">Desde</div>
+                                            <div class="asv-prod-price">
+                                                $<t t-esc="'{:,.0f}'.format(product.list_price).replace(',', '.')"/>
+                                            </div>
+                                            <div class="asv-prod-iva">+ IVA</div>
+                                        </t>
+                                        <t t-else="">
+                                            <div class="asv-prod-price">A consultar</div>
+                                        </t>
+                                    </div>
+                                    <a t-att-href="product.website_url"
+                                       class="asv-btn asv-btn-primary asv-btn-sm">
+                                        Cotizar
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </t>
+
+                    <t t-if="not asv_featured_products">
+                        <p class="asv-empty-state">
+                            No hay productos destacados disponibles. Asigna la cinta
+                            <b>"En stock"</b> a los productos que quieras mostrar aquí.
+                        </p>
+                    </t>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

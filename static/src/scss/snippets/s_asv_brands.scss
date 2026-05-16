@@ -1,0 +1,77 @@
+// ---- ASVETEC Marcas ----
+
+@keyframes asv-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.s_asv_brands.asv-brands {
+    padding: 44px 0;
+    background: var(--bg-paper);
+    border-top: 1px solid var(--asv-line);
+    border-bottom: 1px solid var(--asv-line);
+
+    .asv-brands-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+        padding: 0 48px;
+        max-width: var(--asv-page-max);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .asv-brands-ver-todas {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--asv-cyan-500);
+        text-decoration: none;
+        &:hover { opacity: 0.8; }
+    }
+
+    // Contenedor con fade en los bordes
+    .asv-brands-track-wrap {
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+
+    .asv-brands-track {
+        display: flex;
+        width: max-content;
+        animation: asv-marquee 38s linear infinite;
+
+        &:hover { animation-play-state: paused; }
+    }
+
+    .asv-brand-tile {
+        flex: 0 0 auto;
+        width: 180px;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border-right: 1px solid var(--asv-line);
+        padding: 0 24px;
+        filter: grayscale(0.2);
+        transition: filter 160ms ease;
+
+        &:hover { filter: none; }
+    }
+
+    // Estilos tipográficos de cada marca
+    .asv-brand-karcher  { font-family: var(--asv-font-display); font-style: italic; font-weight: 900; font-size: 26px; color: #FFD800; background: #000; padding: 6px 14px; border-radius: 3px; }
+    .asv-brand-bosch    { font-family: Arial Black, sans-serif; font-weight: 900; font-size: 22px; color: #fff; background: #cc0000; padding: 6px 14px; letter-spacing: 0.16em; }
+    .asv-brand-stihl    { font-family: var(--asv-font-display); font-weight: 900; font-size: 26px; color: #fff; background: #f47920; padding: 6px 14px; }
+    .asv-brand-schulz   { font-family: var(--asv-font-sans); font-weight: 800; font-size: 26px; color: #003a70; letter-spacing: -0.02em; }
+    .asv-brand-johnbean { font-family: var(--asv-font-sans); font-weight: 800; font-size: 18px; color: #cc1f24; letter-spacing: 0.04em; font-style: italic; }
+    .asv-brand-gladiator{ font-family: var(--asv-font-display); font-style: italic; font-weight: 900; font-size: 22px; color: #1a1a1f; }
+    .asv-brand-comet    { font-family: var(--asv-font-display); font-style: italic; font-weight: 900; font-size: 28px; color: #e30613; }
+    .asv-brand-rotary   { font-family: var(--asv-font-sans); font-weight: 800; font-size: 24px; color: #003a70; letter-spacing: -0.03em; }
+    .asv-brand-peak     { font-family: var(--asv-font-display); font-weight: 900; font-size: 28px; color: #FFD800; background: #1a1a1f; padding: 4px 16px; }
+    .asv-brand-flexbimec{ font-family: var(--asv-font-sans); font-weight: 800; font-size: 24px; color: #003a70; font-style: italic; }
+    .asv-brand-sds      { font-family: Arial Black, sans-serif; font-weight: 900; font-size: 26px; color: #fff; background: #0066b3; padding: 4px 14px; }
+    .asv-brand-indura   { font-family: var(--asv-font-sans); font-weight: 800; font-size: 26px; color: #e30613; letter-spacing: -0.02em; }
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_asv_about" name="ASVETEC Nosotros">
+        <section class="s_asv_about asv-section" data-snippet="s_asv_about"
+                 id="nosotros" style="background: white;">
+            <div class="asv-container">
+                <div class="asv-about-grid">
+
+                    <!-- Columna izquierda — texto -->
+                    <div class="asv-about-text">
+                        <div class="asv-eyebrow">Nosotros</div>
+                        <h2 class="asv-h2" style="font-size: 40px; line-height: 1.1;">
+                            Asesoría técnica para faena minera e industria del norte de Chile.
+                        </h2>
+                        <p class="asv-p">
+                            <strong>RyS ASVETEC</strong> es una empresa de la Segunda Región enfocada en
+                            brindar soluciones en terreno rápidas y confiables. 10 años de experiencia
+                            entregando equipos para taller y sistemas de
+                            <strong>Automatización Neumática y Electrónica</strong>.
+                        </p>
+                        <p class="asv-p">
+                            Nuestro lema es la asesoría — por eso nuestro nombre lo destaca:
+                            ASVETEC = <strong>AS</strong>esorías y <strong>VE</strong>ntas <strong>TEC</strong>nicas.
+                        </p>
+
+                        <div class="asv-about-points">
+                            <div class="asv-about-point">
+                                <div class="asv-about-point-icon">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-about-point-title">Personal calificado</div>
+                                    <div class="asv-about-point-desc">Técnicos con experiencia en mantenimiento industrial y minero.</div>
+                                </div>
+                            </div>
+                            <div class="asv-about-point">
+                                <div class="asv-about-point-icon">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-about-point-title">Equipamiento propio</div>
+                                    <div class="asv-about-point-desc">Talleres en Antofagasta y unidades móviles para faena.</div>
+                                </div>
+                            </div>
+                            <div class="asv-about-point">
+                                <div class="asv-about-point-icon">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-about-point-title">Representaciones</div>
+                                    <div class="asv-about-point-desc">Distribuidores oficiales de marcas nacionales e internacionales.</div>
+                                </div>
+                            </div>
+                            <div class="asv-about-point">
+                                <div class="asv-about-point-icon">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="asv-about-point-title">Respuesta rápida</div>
+                                    <div class="asv-about-point-desc">Cotización, diagnóstico y despacho dentro de la jornada.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="asv-about-ctas">
+                            <a href="#contacto" class="asv-btn asv-btn-primary">
+                                Solicitar información
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                            <a href="/web_asvetec/static/src/pdf/brochure_asvetec.pdf"
+                               class="asv-btn asv-btn-outline"
+                               download="Brochure_ASVETEC_2024.pdf">
+                                Descargar brochure (PDF)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha — imagen + tarjeta flotante -->
+                    <div class="asv-about-visual">
+                        <div class="asv-about-img"
+                             style="background-image: url('/web_asvetec/static/src/img/warehouse.jpg');"/>
+                        <div class="asv-about-float-card">
+                            <div class="asv-about-float-num">10+</div>
+                            <div class="asv-about-float-label">
+                                años desarrollando contratos para empresas mineras e industriales.
+                            </div>
+                        </div>
+                        <div class="asv-about-accent" aria-hidden="true"/>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

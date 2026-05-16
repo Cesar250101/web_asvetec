@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_asv_categories" name="ASVETEC Categorías">
+        <section class="s_asv_categories asv-section" data-snippet="s_asv_categories"
+                 style="background: var(--asv-paper);">
+            <!-- Consultas self-contained: funcionan tanto si la página la sirve
+                 un controlador como si la sirve website.page directamente. -->
+            <t t-set="asv_categories"
+               t-value="request.env['product.public.category'].sudo().search([], order='sequence asc, name asc')"/>
+            <t t-set="_groups"
+               t-value="request.env['product.template'].sudo().read_group([], ['public_categ_ids'], ['public_categ_ids'])"/>
+            <t t-set="asv_cat_counts"
+               t-value="dict([(g['public_categ_ids'][0], g['public_categ_ids_count']) for g in _groups if g.get('public_categ_ids')])"/>
+
+            <div class="asv-container">
+                <div class="asv-section-header">
+                    <div>
+                        <div class="asv-eyebrow">Catálogo</div>
+                        <h2 class="asv-h2">Soluciones por categoría</h2>
+                        <p class="asv-section-sub">
+                            8 líneas verticales que cubren limpieza, taller, energía, arriendo
+                            y consumibles para faenas mineras e industriales del norte de Chile.
+                        </p>
+                    </div>
+                    <a href="/shop" class="asv-btn asv-btn-outline">
+                        Ver catálogo completo
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="asv-cat-grid">
+                    <t t-foreach="asv_categories" t-as="cat">
+                        <a t-attf-href="/shop?category=#{cat.id}" class="asv-cat-card">
+                            <span class="asv-cat-num" aria-hidden="true">
+                                <t t-esc="'%02d' % (cat_index + 1)"/>
+                            </span>
+                            <div class="asv-cat-icon">
+                                <t t-if="cat.asv_svg_icon">
+                                    <t t-raw="cat.asv_svg_icon"/>
+                                </t>
+                                <t t-else="">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <rect x="3" y="3" width="18" height="18" rx="3"/>
+                                    </svg>
+                                </t>
+                            </div>
+                            <div class="asv-cat-info">
+                                <span class="asv-cat-name"><t t-esc="cat.name"/></span>
+                                <div class="asv-cat-meta">
+                                    <span class="asv-cat-count">
+                                        <t t-esc="asv_cat_counts.get(cat.id, 0)"/> productos
+                                    </span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--asv-cyan-500)" stroke-width="2.5">
+                                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </t>
+
+                    <!-- Estado vacío si no hay categorías -->
+                    <t t-if="not asv_categories">
+                        <p class="asv-empty-state">No hay categorías disponibles todavía.</p>
+                    </t>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>
