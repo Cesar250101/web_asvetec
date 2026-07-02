@@ -98,58 +98,51 @@
                                     </p>
 
                                     <!--
-                                        Usa /website/form/ para que Odoo procese el envío y
-                                        cree automáticamente un lead en el CRM.
-                                        data-success-page redirige a /contactus-thank-you.
+                                        Postea a nuestro controlador /asvetec/cotizar (mismo que
+                                        el snippet de la portada) que crea el crm.lead con token
+                                        CSRF explícito. No se usa el mecanismo nativo /website/form/
+                                        porque su widget JS no se engancha de forma fiable a este
+                                        formulario custom, y el submit nativo fallaba con CSRF.
                                     -->
                                     <form id="contactus_form"
-                                          class="asv-contact-form o_mark_required"
-                                          action="/website/form/"
-                                          method="post"
-                                          enctype="multipart/form-data"
-                                          data-mark="*"
-                                          data-model_name="crm.lead"
-                                          data-success-mode="redirect"
-                                          data-success-page="/contactus-thank-you"
-                                          data-pre-fill="true">
+                                          class="asv-contact-form"
+                                          action="/asvetec/cotizar"
+                                          method="post">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
                                         <div class="asv-form-row-2">
                                             <label class="asv-form-field">
                                                 <span class="asv-form-label">Nombre *</span>
-                                                <input class="asv-input s_website_form_input"
-                                                       type="text" name="contact_name" required="1"
-                                                       placeholder="Tu nombre"
-                                                       data-fill-with="name"/>
+                                                <input class="asv-input"
+                                                       type="text" name="name" required="1"
+                                                       placeholder="Tu nombre"/>
                                             </label>
                                             <label class="asv-form-field">
                                                 <span class="asv-form-label">Empresa</span>
-                                                <input class="asv-input s_website_form_input"
-                                                       type="text" name="partner_name"
-                                                       placeholder="Razón social"
-                                                       data-fill-with="commercial_company_name"/>
+                                                <input class="asv-input"
+                                                       type="text" name="company"
+                                                       placeholder="Razón social"/>
                                             </label>
                                         </div>
 
                                         <div class="asv-form-row-2">
                                             <label class="asv-form-field">
                                                 <span class="asv-form-label">Teléfono</span>
-                                                <input class="asv-input s_website_form_input"
+                                                <input class="asv-input"
                                                        type="tel" name="phone"
-                                                       placeholder="+56 9 …"
-                                                       data-fill-with="phone"/>
+                                                       placeholder="+56 9 …"/>
                                             </label>
                                             <label class="asv-form-field">
                                                 <span class="asv-form-label">Email *</span>
-                                                <input class="asv-input s_website_form_input"
-                                                       type="email" name="email_from" required="1"
-                                                       placeholder="tu@empresa.cl"
-                                                       data-fill-with="email"/>
+                                                <input class="asv-input"
+                                                       type="email" name="email" required="1"
+                                                       placeholder="tu@empresa.cl"/>
                                             </label>
                                         </div>
 
                                         <label class="asv-form-field asv-form-field-full">
                                             <span class="asv-form-label">Categoría de interés</span>
-                                            <select class="asv-input s_website_form_input" name="tag_ids">
+                                            <select class="asv-input" name="category">
                                                 <option value="">Seleccionar categoría…</option>
                                                 <option>Limpieza Industrial</option>
                                                 <option>Equipos de Taller</option>
@@ -165,15 +158,10 @@
 
                                         <label class="asv-form-field asv-form-field-full">
                                             <span class="asv-form-label">Mensaje *</span>
-                                            <textarea class="asv-input s_website_form_input"
-                                                      name="description" rows="4" required="1"
+                                            <textarea class="asv-input"
+                                                      name="message" rows="4" required="1"
                                                       placeholder="Detalla el equipo o servicio que necesitas, cantidad, ubicación de faena y plazos."/>
                                         </label>
-
-                                        <!-- Campo oculto: asunto del lead -->
-                                        <input type="hidden" name="name"
-                                               id="asv_lead_name"
-                                               value="Cotización web — ASVETEC"/>
 
                                         <div class="asv-form-footer">
                                             <label class="asv-form-privacy">
@@ -181,7 +169,7 @@
                                                 Acepto la
                                                 <a href="/page/privacy-policy" target="_blank">política de privacidad</a>
                                             </label>
-                                            <button type="submit" class="asv-btn asv-btn-primary asv-btn-lg s_website_form_send">
+                                            <button type="submit" class="asv-btn asv-btn-primary asv-btn-lg">
                                                 Enviar solicitud
                                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                                     <line x1="22" y1="2" x2="11" y2="13"/>
@@ -189,8 +177,6 @@
                                                 </svg>
                                             </button>
                                         </div>
-
-                                        <span id="s_website_form_result"/>
                                     </form>
                                 </div>
 

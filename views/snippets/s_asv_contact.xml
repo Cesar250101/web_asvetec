@@ -84,6 +84,7 @@
                             Todos los campos con * son obligatorios. Respuesta en menos de 24 horas hábiles.
                         </p>
                         <form class="asv-contact-form" action="/asvetec/cotizar" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="asv-form-row-2">
                                 <label class="asv-form-field">
                                     <span class="asv-form-label">Nombre *</span>

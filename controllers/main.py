@@ -15,13 +15,19 @@ class AsvController(http.Controller):
     @http.route('/asvetec/cotizar', type='http', auth='public', website=True,
                 methods=['POST'], csrf=True)
     def cotizar(self, **kwargs):
+        category = kwargs.get('category', '')
+        message = kwargs.get('message', '')
+        description = (
+            'Categoría de interés: %s\n\n%s' % (category, message)
+            if category else message
+        )
         vals = {
             'name': 'Cotización web: %s' % kwargs.get('name', ''),
             'contact_name': kwargs.get('name', ''),
             'email_from': kwargs.get('email', ''),
             'phone': kwargs.get('phone', ''),
             'partner_name': kwargs.get('company', ''),
-            'description': kwargs.get('message', ''),
+            'description': description,
             'tag_ids': [],
         }
         try:
