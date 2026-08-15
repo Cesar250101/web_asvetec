@@ -61,6 +61,29 @@
         &:hover { filter: none; }
     }
 
+    a.asv-brand-tile {
+        text-decoration: none;
+    }
+
+    .asv-brand-logo {
+        display: block;
+        // Misma zona útil que los logos tipográficos predeterminados.
+        // La imagen conserva su proporción y nunca recorta el archivo cargado.
+        width: 128px;
+        height: 40px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .asv-brand-name {
+        font-family: var(--asv-font-sans);
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--asv-navy-800);
+        text-align: center;
+    }
+
     // Estilos tipográficos de cada marca
     .asv-brand-karcher  { font-family: var(--asv-font-display); font-style: italic; font-weight: 900; font-size: 26px; color: #FFD800; background: #000; padding: 6px 14px; border-radius: 3px; }
     .asv-brand-bosch    { font-family: Arial Black, sans-serif; font-weight: 900; font-size: 22px; color: #fff; background: #cc0000; padding: 6px 14px; letter-spacing: 0.16em; }

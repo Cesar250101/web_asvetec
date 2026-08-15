@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- El Hero usa exclusivamente el selector nativo de fondo del editor. -->
+    <delete id="s_asv_hero_options" model="ir.ui.view"/>
+    <delete id="view_website_form_asv_hero_image" model="ir.ui.view"/>
+</odoo>

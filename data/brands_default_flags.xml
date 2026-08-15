@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <!-- Sólo marca como predeterminados los registros entregados por el módulo.
+         Al cargar una imagen, el modelo los convierte automáticamente en propios. -->
+    <record id="brand_karcher" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_bosch" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_stihl" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_schulz" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_johnbean" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_gladiator" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_comet" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_rotary" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_peak" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_flexbimec" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_sds" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+    <record id="brand_indura" model="asvetec.brand"><field name="is_default_logo">True</field></record>
+</odoo>

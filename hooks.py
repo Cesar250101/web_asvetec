@@ -56,7 +56,10 @@ def assign_category_icons(env, force=False):
         if not png_b64:
             continue
         try:
-            cat.write({'image_1920': png_b64})
+            cat.write({
+                'image_1920': png_b64,
+                'asv_generated_category_image': True,
+            })
             assigned += 1
         except Exception as exc:
             _logger.error("Fallo al asignar icono a %s: %s", xmlid, exc)

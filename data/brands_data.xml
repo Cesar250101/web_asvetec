@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="brand_karcher" model="asvetec.brand"><field name="name">Kärcher</field><field name="sequence">10</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_bosch" model="asvetec.brand"><field name="name">BOSCH</field><field name="sequence">20</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_stihl" model="asvetec.brand"><field name="name">STIHL</field><field name="sequence">30</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_schulz" model="asvetec.brand"><field name="name">Schulz</field><field name="sequence">40</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_johnbean" model="asvetec.brand"><field name="name">John Bean</field><field name="sequence">50</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_gladiator" model="asvetec.brand"><field name="name">Gladiator</field><field name="sequence">60</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_comet" model="asvetec.brand"><field name="name">Comet</field><field name="sequence">70</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_rotary" model="asvetec.brand"><field name="name">Rotary</field><field name="sequence">80</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_peak" model="asvetec.brand"><field name="name">PEAK</field><field name="sequence">90</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_flexbimec" model="asvetec.brand"><field name="name">Flexbimec</field><field name="sequence">100</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_sds" model="asvetec.brand"><field name="name">SDS</field><field name="sequence">110</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+    <record id="brand_indura" model="asvetec.brand"><field name="name">Indura</field><field name="sequence">120</field><field name="website_id" ref="website_asvetec"/><field name="is_default_logo">True</field></record>
+</odoo>

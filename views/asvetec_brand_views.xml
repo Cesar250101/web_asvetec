@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_asvetec_brand_tree" model="ir.ui.view">
+        <field name="name">asvetec.brand.tree</field>
+        <field name="model">asvetec.brand</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" default_order="sequence,name">
+                <field name="sequence" widget="handle"/>
+                <field name="image_1920" widget="image" class="asv_brand_logo_preview"/>
+                <field name="name"/>
+                <field name="website_id"/>
+                <field name="website_url"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_asvetec_brand_form" model="ir.ui.view">
+        <field name="name">asvetec.brand.form</field>
+        <field name="model">asvetec.brand</field>
+        <field name="arch" type="xml">
+            <form string="Marca representada">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Nombre de la marca"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="website_id"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                            <field name="website_url" placeholder="https://..."/>
+                        </group>
+                        <group>
+                            <field name="image_1920" widget="image" class="oe_avatar"
+                                   options="{'preview_image': 'image_1920'}"/>
+                        </group>
+                    </group>
+                    <div class="text-muted mt16">
+                        Suba un logo PNG o SVG horizontal con fondo transparente. Si no hay logo,
+                        el sitio muestra el nombre de la marca como respaldo.
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_asvetec_brand" model="ir.actions.act_window">
+        <field name="name">Marcas representadas</field>
+        <field name="res_model">asvetec.brand</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="view_asvetec_brand_import_wizard" model="ir.ui.view">
+        <field name="name">asvetec.brand.import.wizard.form</field>
+        <field name="model">asvetec.brand.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cargar varios logos" create="false" edit="false">
+                <group>
+                    <field name="website_id" placeholder="Todos los sitios web"/>
+                    <field name="attachment_ids" widget="many2many_binary"
+                           options="{'accepted_file_extensions': 'image/*'}"/>
+                </group>
+                <div class="text-muted">
+                    Seleccione todos los archivos a la vez. Se creará una marca por cada logo,
+                    usando el nombre del archivo como nombre inicial.
+                </div>
+                <footer>
+                    <button name="action_import" type="object" string="Crear marcas" class="btn-primary"/>
+                    <button string="Cancelar" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_asvetec_brand_import" model="ir.actions.act_window">
+        <field name="name">Cargar varios logos</field>
+        <field name="res_model">asvetec.brand.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_asvetec_brand_import_wizard"/>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="view_asvetec_brand_settings_wizard" model="ir.ui.view">
+        <field name="name">asvetec.brand.settings.wizard.form</field>
+        <field name="model">asvetec.brand.settings.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Ajustes de logos">
+                <group>
+                    <field name="website_id"/>
+                    <field name="show_default_logos"/>
+                </group>
+                <div class="text-muted">
+                    Al activarlo se muestran los nombres tipográficos de ejemplo incluidos
+                    originalmente en el carrusel. Los logos que usted cargue se muestran siempre.
+                </div>
+                <footer>
+                    <button name="action_save" type="object" string="Guardar" class="btn-primary"/>
+                    <button string="Cancelar" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_asvetec_brand_settings" model="ir.actions.act_window">
+        <field name="name">Ajustes de logos</field>
+        <field name="res_model">asvetec.brand.settings.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_asvetec_brand_settings_wizard"/>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="menu_asvetec_brand"
+              name="Marcas representadas"
+              parent="website.menu_website_global_configuration"
+              action="action_asvetec_brand"
+              sequence="80"
+              groups="website.group_website_designer"/>
+
+    <menuitem id="menu_asvetec_brand_import"
+              name="Cargar varios logos"
+              parent="website.menu_website_global_configuration"
+              action="action_asvetec_brand_import"
+              sequence="81"
+              groups="website.group_website_designer"/>
+
+    <menuitem id="menu_asvetec_brand_settings"
+              name="Ajustes de logos"
+              parent="website.menu_website_global_configuration"
+              action="action_asvetec_brand_settings"
+              sequence="82"
+              groups="website.group_website_designer"/>
+</odoo>

@@ -1,0 +1,12 @@
+// Miniaturas manejables en la lista de marcas; no altera el logo del sitio.
+.o_list_view .asv_brand_logo_preview {
+    width: 120px !important;
+
+    img {
+        width: 96px !important;
+        height: 48px !important;
+        max-width: 96px !important;
+        max-height: 48px !important;
+        object-fit: contain;
+    }
+}

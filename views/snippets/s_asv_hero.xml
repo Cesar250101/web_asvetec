@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="s_asv_hero" name="ASVETEC Hero">
-        <section class="s_asv_hero asv-hero" data-snippet="s_asv_hero">
+        <section class="s_asv_hero asv-hero oe_img_bg o_bg_img_center o_bg_img_origin_border_box"
+                 data-snippet="s_asv_hero"
+                 style="background-image: url('/web_asvetec/static/src/img/hero-workshop.jpg');">
             <!-- Stripe decorativa top -->
             <div class="asv-top-stripe" aria-hidden="true"/>
 
-            <div class="asv-hero-grid">
+            <div class="asv-hero-grid" style="background-image: inherit;">
                 <!-- Panel izquierdo cyan -->
                 <div class="asv-hero-panel">
                     <!-- Watermark decorativo -->
@@ -60,8 +62,9 @@
                 </div>
 
                 <!-- Panel derecho — foto de taller -->
-                <div class="asv-hero-photo"
-                     style="background-image: url('/web_asvetec/static/src/img/hero-workshop.jpg');">
+                <!-- La imagen se edita con el control nativo de fondo del section.
+                     El panel derecho hereda esa misma imagen para respetar el layout split. -->
+                <div class="asv-hero-photo" style="background-image: inherit;">
                     <div class="asv-hero-photo-overlay"/>
                     <!-- Tarjeta flotante -->
                     <div class="asv-hero-float-card">

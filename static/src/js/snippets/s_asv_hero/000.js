@@ -8,8 +8,9 @@ publicWidget.registry.sAsvHero = publicWidget.Widget.extend({
     selector: ".s_asv_hero",
 
     start() {
+        const result = this._super.apply(this, arguments);
         this._bindSmoothScroll();
-        return this._super(...arguments);
+        return result;
     },
 
     _bindSmoothScroll() {

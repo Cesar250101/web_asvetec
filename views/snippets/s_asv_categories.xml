@@ -38,7 +38,15 @@
                                 <t t-esc="'%02d' % (cat_index + 1)"/>
                             </span>
                             <div class="asv-cat-icon">
-                                <t t-if="cat.asv_svg_icon">
+                                <!-- La imagen configurada en la categoría tiene prioridad.
+                                     El ícono ASVETEC sólo se usa como respaldo. -->
+                                <t t-if="cat._asv_has_uploaded_category_image()">
+                                    <img class="asv-cat-image"
+                                         t-att-src="'/web/image/product.public.category/%s/image_1920' % cat.id"
+                                         t-att-alt="cat.name"
+                                         loading="lazy"/>
+                                </t>
+                                <t t-elif="cat.asv_svg_icon">
                                     <t t-raw="cat.asv_svg_icon"/>
                                 </t>
                                 <t t-else="">

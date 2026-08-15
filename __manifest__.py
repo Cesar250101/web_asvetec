@@ -1,6 +1,6 @@
 {
     'name': 'Web ASVETEC',
-    'version': '16.0.1.3.0',
+    'version': '16.0.1.3.30',
     'summary': 'Sitio web de ASVETEC — RyS ASVETEC ltda., soluciones industriales norte de Chile',
     'description': 'Módulo que implementa el sitio web ASVETEC con snippets reutilizables: hero, categorías, productos, nosotros, marcas, servicios y contacto.',
     'category': 'Website',
@@ -14,9 +14,12 @@
         'security/ir.model.access.csv',
         'data/categories_data.xml',
         'data/website_data.xml',
+        'data/brands_data.xml',
+        'data/brands_default_flags.xml',
         'views/layout/asv_header.xml',
         'views/layout/asv_footer.xml',
         'views/layout/asv_shop_overrides.xml',
+        'views/asvetec_brand_views.xml',
         'views/snippets/s_asv_hero.xml',
         'views/snippets/s_asv_trust_bar.xml',
         'views/snippets/s_asv_categories.xml',
@@ -26,11 +29,15 @@
         'views/snippets/s_asv_services.xml',
         'views/snippets/s_asv_contact.xml',
         'views/snippets/snippets.xml',
+        'views/website_hero_image_view.xml',
         'views/pages/home.xml',
         'views/pages/cotizar_ok.xml',
         'views/pages/asv_contactus.xml',
     ],
     'assets': {
+        'web.assets_backend': [
+            'web_asvetec/static/src/scss/asv_backend.scss',
+        ],
         'web.assets_frontend': [
             # Tokens CSS — debe ir primero
             'web_asvetec/static/src/scss/asv_tokens.scss',
@@ -51,6 +58,7 @@
             'web_asvetec/static/src/js/snippets/s_asv_hero/000.js',
             'web_asvetec/static/src/js/snippets/s_asv_brands/000.js',
             'web_asvetec/static/src/js/snippets/s_asv_featured_products/000.js',
+            'web_asvetec/static/src/js/snippets/s_asv_categories/000.js',
         ],
     },
     'installable': True,

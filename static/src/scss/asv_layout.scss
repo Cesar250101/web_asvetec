@@ -2,8 +2,11 @@
 // ASVETEC — Layout base, tipografía y componentes comunes
 // ============================================================
 
-// Aplica sólo cuando el wrapwrap tiene la clase asv-body
-.asv-body {
+// Los snippets se pueden copiar desde la página ASVETEC hacia otra página
+// desde el editor. Por eso las reglas comunes no dependen sólo de .asv-body:
+// cada bloque s_asv_* conserva su jerarquía visual aun fuera de esa página.
+.asv-body,
+[class*="s_asv_"] {
     font-family: var(--asv-font-sans);
     color: var(--fg-1);
     background: var(--bg-page);
@@ -11,7 +14,8 @@
 }
 
 // Contenedor centrado
-.asv-body .asv-container {
+.asv-body .asv-container,
+[class*="s_asv_"] .asv-container {
     max-width: var(--asv-page-max);
     margin: 0 auto;
     padding: 0 var(--asv-page-pad);
@@ -19,12 +23,14 @@
 }
 
 // Secciones
-.asv-body .asv-section {
+.asv-body .asv-section,
+[class*="s_asv_"].asv-section {
     padding: 72px 0;
 }
 
 // Cabecera de sección (flex row: título + CTA)
-.asv-body .asv-section-header {
+.asv-body .asv-section-header,
+[class*="s_asv_"] .asv-section-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -33,7 +39,8 @@
     gap: 16px;
 }
 
-.asv-body .asv-section-sub {
+.asv-body .asv-section-sub,
+[class*="s_asv_"] .asv-section-sub {
     font-size: var(--asv-fs-16);
     color: var(--fg-2);
     line-height: 1.6;
@@ -42,7 +49,8 @@
 }
 
 // Eyebrow / etiqueta superior
-.asv-body .asv-eyebrow {
+.asv-body .asv-eyebrow,
+[class*="s_asv_"] .asv-eyebrow {
     font-family: var(--asv-font-sans);
     font-weight: 700;
     font-size: var(--asv-fs-12);
@@ -53,7 +61,8 @@
 }
 
 // Headings
-.asv-body .asv-h2 {
+.asv-body .asv-h2,
+[class*="s_asv_"] .asv-h2 {
     font-family: var(--asv-font-sans);
     font-weight: 800;
     font-size: var(--asv-fs-32);
@@ -63,25 +72,29 @@
     letter-spacing: -0.01em;
 }
 
-.asv-body .asv-h2-ondark {
+.asv-body .asv-h2-ondark,
+[class*="s_asv_"] .asv-h2-ondark {
     color: white;
     font-size: 40px;
     line-height: 1.1;
 }
 
-.asv-body .asv-p {
+.asv-body .asv-p,
+[class*="s_asv_"] .asv-p {
     font-size: var(--asv-fs-16);
     line-height: 1.65;
     color: var(--fg-2);
     margin: 0 0 16px;
 }
 
-.asv-body .asv-p-ondark {
+.asv-body .asv-p-ondark,
+[class*="s_asv_"] .asv-p-ondark {
     color: rgba(255, 255, 255, 0.88);
 }
 
 // Botones
-.asv-body .asv-btn {
+.asv-body .asv-btn,
+[class*="s_asv_"] .asv-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -100,43 +113,50 @@
     &:active { opacity: 0.85; }
 }
 
-.asv-body .asv-btn-primary {
+.asv-body .asv-btn-primary,
+[class*="s_asv_"] .asv-btn-primary {
     background: var(--asv-cyan-500);
     color: white;
     &:hover { background: var(--asv-cyan-400); color: white; }
 }
 
-.asv-body .asv-btn-dark {
+.asv-body .asv-btn-dark,
+[class*="s_asv_"] .asv-btn-dark {
     background: var(--asv-navy-800);
     color: white;
     &:hover { background: var(--asv-purple-700); color: white; }
 }
 
-.asv-body .asv-btn-ghost {
+.asv-body .asv-btn-ghost,
+[class*="s_asv_"] .asv-btn-ghost {
     background: transparent;
     color: white;
     border: 1.5px solid rgba(255, 255, 255, 0.5);
     &:hover { background: rgba(255, 255, 255, 0.1); border-color: white; color: white; }
 }
 
-.asv-body .asv-btn-outline {
+.asv-body .asv-btn-outline,
+[class*="s_asv_"] .asv-btn-outline {
     background: white;
     color: var(--asv-navy-800);
     border: 1.5px solid var(--asv-navy-800);
     &:hover { background: var(--asv-navy-800); color: white; }
 }
 
-.asv-body .asv-btn-sm {
+.asv-body .asv-btn-sm,
+[class*="s_asv_"] .asv-btn-sm {
     padding: 8px 14px;
     font-size: 12px;
 }
 
-.asv-body .asv-btn-lg {
+.asv-body .asv-btn-lg,
+[class*="s_asv_"] .asv-btn-lg {
     padding: 14px 28px;
 }
 
 // Hover lift para tarjetas
-.asv-body .asv-card-lift {
+.asv-body .asv-card-lift,
+[class*="s_asv_"] .asv-card-lift {
     transition: transform 160ms ease, box-shadow 160ms ease;
     &:hover {
         transform: translateY(-3px);
@@ -145,7 +165,8 @@
 }
 
 // Input y select
-.asv-body .asv-input {
+.asv-body .asv-input,
+[class*="s_asv_"] .asv-input {
     width: 100%;
     padding: 12px 14px;
     border: 1px solid var(--asv-line);
@@ -166,7 +187,8 @@
 }
 
 // Badges de producto
-.asv-body .asv-badge {
+.asv-body .asv-badge,
+[class*="s_asv_"] .asv-badge {
     display: inline-block;
     padding: 3px 8px;
     font-size: 10px;
@@ -176,13 +198,18 @@
     font-family: var(--asv-font-sans);
     text-transform: uppercase;
 }
-.asv-body .asv-badge-stock { background: rgba(47, 170, 91, 0.12); color: #1e7a3d; }
-.asv-body .asv-badge-rent  { background: var(--asv-purple-700); color: white; }
-.asv-body .asv-badge-promo { background: var(--asv-cyan-500); color: white; }
-.asv-body .asv-badge-new   { background: var(--asv-navy-800); color: white; }
+.asv-body .asv-badge-stock,
+[class*="s_asv_"] .asv-badge-stock { background: rgba(47, 170, 91, 0.12); color: #1e7a3d; }
+.asv-body .asv-badge-rent,
+[class*="s_asv_"] .asv-badge-rent  { background: var(--asv-purple-700); color: white; }
+.asv-body .asv-badge-promo,
+[class*="s_asv_"] .asv-badge-promo { background: var(--asv-cyan-500); color: white; }
+.asv-body .asv-badge-new,
+[class*="s_asv_"] .asv-badge-new   { background: var(--asv-navy-800); color: white; }
 
 // Focus visible
-.asv-body *:focus-visible {
+.asv-body *:focus-visible,
+[class*="s_asv_"] *:focus-visible {
     outline: 2px solid var(--asv-cyan-500);
     outline-offset: 2px;
 }
