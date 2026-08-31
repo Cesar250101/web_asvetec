@@ -4,8 +4,10 @@
         <section class="s_asv_featured_products asv-section" data-snippet="s_asv_featured_products"
                  style="background: white;">
             <!-- Consultas self-contained -->
+            <!-- 'html' es traducible: se fuerza en_US porque el sitio corre en es_ES,
+                 donde esta cinta conserva la traducción original "Fuera de stock". -->
             <t t-set="asv_ribbon"
-               t-value="request.env['product.ribbon'].sudo().search([('html', 'ilike', 'en stock')], limit=1)"/>
+               t-value="request.env['product.ribbon'].sudo().with_context(lang='en_US').search([('html', 'ilike', 'en stock')], limit=1)"/>
             <t t-set="asv_featured_products"
                t-value="request.env['product.template'].sudo().search([('website_ribbon_id', '=', asv_ribbon.id)], order='sequence asc, name asc') if asv_ribbon else request.env['product.template'].sudo().browse([])"/>
             <t t-set="asv_filter_categories"
@@ -68,8 +70,14 @@
                                  t-att-data-categories="'[' + ','.join(['&quot;' + c + '&quot;' for c in prod_cats]) + ']'"
                                  t-att-data-category="prod_cats[0] if prod_cats else ''">
                             <div class="asv-prod-img">
-                                <!-- Siempre muestra el ícono SVG de la categoría -->
-                                <t t-if="asv_card_svg">
+                                <!-- Prioriza la foto real del producto; el SVG queda solo como fallback. -->
+                                <t t-if="product.image_1920">
+                                    <img class="asv-prod-photo"
+                                         t-att-src="'/web/image/product.template/%s/image_512' % product.id"
+                                         t-att-alt="product.name"
+                                         loading="lazy"/>
+                                </t>
+                                <t t-elif="asv_card_svg">
                                     <div class="asv-prod-svg-fallback">
                                         <t t-raw="asv_card_svg"/>
                                     </div>
