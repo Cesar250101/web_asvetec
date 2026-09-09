@@ -1,6 +1,6 @@
 {
     'name': 'Web ASVETEC',
-    'version': '16.0.1.3.30',
+    'version': '16.0.1.3.39',
     'summary': 'Sitio web de ASVETEC — RyS ASVETEC ltda., soluciones industriales norte de Chile',
     'description': 'Módulo que implementa el sitio web ASVETEC con snippets reutilizables: hero, categorías, productos, nosotros, marcas, servicios y contacto.',
     'category': 'Website',
@@ -20,6 +20,7 @@
         'views/layout/asv_footer.xml',
         'views/layout/asv_shop_overrides.xml',
         'views/asvetec_brand_views.xml',
+        'views/product_template_ribbon.xml',
         'views/snippets/s_asv_hero.xml',
         'views/snippets/s_asv_trust_bar.xml',
         'views/snippets/s_asv_categories.xml',

@@ -45,30 +45,6 @@
         max-width: 560px;
     }
 
-    .asv-hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 12px;
-        border-radius: var(--asv-radius-pill);
-        background: rgba(28, 26, 68, 0.45);
-        color: white;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        margin-bottom: 22px;
-    }
-
-    .asv-hero-badge-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: var(--asv-radius-pill);
-        background: var(--asv-cyan-300);
-        box-shadow: 0 0 0 4px rgba(126, 208, 245, 0.25);
-        flex: 0 0 auto;
-    }
-
     .asv-hero-title {
         margin: 0;
         font-family: var(--asv-font-sans);
@@ -145,34 +121,6 @@
             rgba(0, 0, 0, 0) 30%,
             rgba(0, 0, 0, 0.25) 100%
         );
-    }
-
-    .asv-hero-float-card {
-        position: absolute;
-        right: 32px;
-        bottom: 32px;
-        background: rgba(28, 26, 68, 0.92);
-        color: white;
-        padding: 18px 22px;
-        border-radius: var(--asv-radius-md);
-        max-width: 320px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .asv-hero-float-eyebrow {
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        color: var(--asv-cyan-300);
-        text-transform: uppercase;
-        margin-bottom: 6px;
-    }
-
-    .asv-hero-float-text {
-        font-size: 14px;
-        line-height: 1.5;
-        font-weight: 500;
-        margin: 0;
     }
 
     @media (max-width: 900px) {

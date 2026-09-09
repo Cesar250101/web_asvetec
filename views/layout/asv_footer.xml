@@ -2,14 +2,15 @@
 <odoo>
     <!--
         Reemplaza el footer nativo de Odoo con el footer de ASVETEC.
-        Solo se activa cuando el sitio web se llama 'ASVETEC'.
+        Se activa para el sitio ASVETEC sin depender de la capitalización de
+        su nombre. Las rutas son relativas a la portada activa del sitio.
         Las redes sociales usan los mismos URLs /website/social/* de Odoo
         para que sigan siendo configurables desde el backend.
     -->
     <template id="asv_footer" inherit_id="website.footer_custom"
               name="ASVETEC Footer" priority="20">
         <xpath expr="//div[@id='footer']" position="replace">
-            <t t-if="website and website.name == 'ASVETEC'">
+            <t t-if="website and (website.name or '').lower() == 'asvetec'">
                 <div id="footer" t-ignore="true" t-if="not no_footer">
                     <footer class="asv-footer">
                         <div class="asv-container">
@@ -33,11 +34,11 @@
                                 <div class="asv-footer-col">
                                     <div class="asv-footer-col-title">Navegación</div>
                                     <ul class="asv-footer-links">
-                                        <li><a href="/asvetec">Inicio</a></li>
+                                        <li><a href="/">Inicio</a></li>
                                         <li><a href="/shop">Catálogo</a></li>
-                                        <li><a href="/asvetec#nosotros">Quiénes somos</a></li>
-                                        <li><a href="/asvetec#servicios">Servicios</a></li>
-                                        <li><a href="/asvetec#contacto">Contacto</a></li>
+                                        <li><a href="/#nosotros">Quiénes somos</a></li>
+                                        <li><a href="/#servicios">Servicios</a></li>
+                                        <li><a href="/#contacto">Contacto</a></li>
                                     </ul>
                                 </div>
 
@@ -114,7 +115,7 @@
                             <div class="asv-container">
                                 <span>© <t t-esc="datetime.date.today().year"/> RyS ASVETEC ltda. · Todos los derechos reservados</span>
                                 <span class="asv-footer-copyright-sep">·</span>
-                                <a href="/asvetec">asvetec.cl</a>
+                                <a href="/">asvetec.cl</a>
                             </div>
                         </div>
                     </footer>

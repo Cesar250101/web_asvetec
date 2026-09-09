@@ -34,9 +34,6 @@
                 <div class="asv-cat-grid">
                     <t t-foreach="asv_categories" t-as="cat">
                         <a t-attf-href="/shop?category=#{cat.id}" class="asv-cat-card">
-                            <span class="asv-cat-num" aria-hidden="true">
-                                <t t-esc="'%02d' % (cat_index + 1)"/>
-                            </span>
                             <div class="asv-cat-icon">
                                 <!-- La imagen configurada en la categoría tiene prioridad.
                                      El ícono ASVETEC sólo se usa como respaldo. -->

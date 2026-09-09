@@ -1,6 +1,6 @@
 // ---- ASVETEC Footer ----
-.asv-body {
-    .asv-footer {
+.asv-footer {
+    & {
         background: var(--bg-footer); // #342f5e
         color: rgba(255, 255, 255, 0.72);
         font-family: var(--asv-font-sans);
@@ -14,7 +14,16 @@
             background: var(--asv-top-stripe);
         }
 
+        // Mismo ancho máximo y centrado que el resto de la página.
+        // No depende de .asv-body (ver asv_layout.scss): esa clase requiere
+        // website.name == 'ASVETEC' exacto y nunca se aplica al sitio real
+        // 'Asvetec', así que el footer fija su propio centrado aquí.
         .asv-container {
+            max-width: var(--asv-page-max);
+            margin: 0 auto;
+            width: 100%;
+            padding-left: var(--asv-page-pad);
+            padding-right: var(--asv-page-pad);
             padding-top: 56px;
             padding-bottom: 52px;
         }

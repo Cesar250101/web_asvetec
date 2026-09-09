@@ -14,11 +14,6 @@
                     <div class="asv-hero-watermark" aria-hidden="true">ASVETEC</div>
 
                     <div class="asv-hero-content">
-                        <div class="asv-hero-badge">
-                            <span class="asv-hero-badge-dot"/>
-                            10 años en el norte de Chile
-                        </div>
-
                         <h1 class="asv-hero-title">
                             Soluciones industriales <em>rápidas y confiables.</em>
                         </h1>
@@ -66,14 +61,6 @@
                      El panel derecho hereda esa misma imagen para respetar el layout split. -->
                 <div class="asv-hero-photo" style="background-image: inherit;">
                     <div class="asv-hero-photo-overlay"/>
-                    <!-- Tarjeta flotante -->
-                    <div class="asv-hero-float-card">
-                        <div class="asv-hero-float-eyebrow">Servicio en terreno</div>
-                        <p class="asv-hero-float-text">
-                            Diagnóstico y reparación de equipos directamente en su faena minera
-                            o instalación industrial.
-                        </p>
-                    </div>
                 </div>
             </div>
         </section>
