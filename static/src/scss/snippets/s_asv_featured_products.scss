@@ -122,25 +122,10 @@
             }
         }
 
-        .asv-badge,
-        .asv-badge-ribbon {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            padding: 3px 8px;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            border-radius: var(--asv-radius-xs);
-            font-family: var(--asv-font-sans);
-            text-transform: uppercase;
-            background: var(--asv-navy-800);
-            color: white;
-            line-height: 1.4;
-
-            // El ribbon de Odoo puede traer HTML con su propio color de fondo
-            * { font-size: inherit; font-weight: inherit; }
-        }
+        // Las cintas usan el CSS estándar de Odoo (.o_ribbon + .o_ribbon_left/
+        // .o_ribbon_right/.o_tag_*), que ya viene en web.assets_frontend. Aquí
+        // no se define ningún estilo propio para no pisar los colores y la
+        // posición configurados en cada product.ribbon.
     }
 
     .asv-empty-state {

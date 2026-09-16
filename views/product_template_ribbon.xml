@@ -8,8 +8,14 @@
             <!-- Odoo reserva esta opción a Ajustes (base.group_no_one).
                  Los usuarios Editor and Designer ya pueden editar el sitio y
                  sólo necesitan leer y seleccionar las cintas existentes. -->
+            <!-- website_ribbon_id pasa de Many2one a Many2many en
+                 models/product_template_ribbon.py: se permite elegir varias
+                 cintas con el mismo campo nativo, por eso el widget cambia a
+                 many2many_tags. -->
             <field name="website_ribbon_id" position="attributes">
                 <attribute name="groups">website.group_website_designer</attribute>
+                <attribute name="widget">many2many_tags</attribute>
+                <attribute name="options">{'no_quick_create': True}</attribute>
             </field>
         </field>
     </record>

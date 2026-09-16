@@ -9,7 +9,7 @@
             <t t-set="asv_ribbon"
                t-value="request.env['product.ribbon'].sudo().with_context(lang='en_US').search([('html', 'ilike', 'en stock')], limit=1)"/>
             <t t-set="asv_featured_products"
-               t-value="request.env['product.template'].sudo().search([('website_ribbon_id', '=', asv_ribbon.id)], order='sequence asc, name asc') if asv_ribbon else request.env['product.template'].sudo().browse([])"/>
+               t-value="request.env['product.template'].sudo().search([('website_ribbon_id', 'in', asv_ribbon.id)], order='sequence asc, name asc') if asv_ribbon else request.env['product.template'].sudo().browse([])"/>
             <t t-set="asv_filter_categories"
                t-value="asv_featured_products.mapped('public_categ_ids').sorted(key=lambda c: (c.sequence, c.name))"/>
             <!-- Pool de íconos para productos sin categoría SVG — ciclo por índice -->
@@ -93,11 +93,25 @@
                                         </svg>
                                     </div>
                                 </t>
-                                <!-- Ribbon / badge -->
-                                <t t-if="product.website_ribbon_id">
-                                    <span class="asv-badge asv-badge-ribbon">
-                                        <t t-raw="product.website_ribbon_id.html"/>
-                                    </span>
+                                <!-- Cintas: mismo marcado que el ribbon estándar de Odoo
+                                     (website_sale/views/templates.xml), respetando html_class,
+                                     text_color y bg_color de cada cinta. El campo es many2many,
+                                     así que se agrupan por esquina: las de la izquierda y las de
+                                     la derecha se apilan por separado, cada una con su propio
+                                     índice, para que una cinta alineada a la derecha no herede el
+                                     desplazamiento de las de la izquierda. -->
+                                <t t-set="asv_ribbons_right"
+                                   t-value="product.website_ribbon_id.filtered(lambda r: 'right' in (r.html_class or ''))"/>
+                                <t t-set="asv_ribbons_left"
+                                   t-value="product.website_ribbon_id - asv_ribbons_right"/>
+                                <t t-foreach="[asv_ribbons_left, asv_ribbons_right]" t-as="asv_ribbon_group">
+                                    <t t-foreach="asv_ribbon_group" t-as="asv_prod_ribbon">
+                                        <t t-set="asv_ribbon_class" t-value="asv_prod_ribbon.html_class or 'o_ribbon_left'"/>
+                                        <t t-set="asv_ribbon_top" t-value="round(asv_prod_ribbon_index * (1.9 if 'o_tag' in asv_ribbon_class else 2.6), 2)"/>
+                                        <span t-attf-class="o_ribbon o_not_editable #{asv_ribbon_class}"
+                                              t-attf-style="#{asv_prod_ribbon.text_color and 'color: %s;' % asv_prod_ribbon.text_color or ''}#{asv_prod_ribbon.bg_color and 'background-color: %s;' % asv_prod_ribbon.bg_color or ''}#{asv_ribbon_top and 'top: %srem;' % asv_ribbon_top or ''}"
+                                              t-out="asv_prod_ribbon.html or ''"/>
+                                    </t>
                                 </t>
                             </div>
                             <div class="asv-prod-body">

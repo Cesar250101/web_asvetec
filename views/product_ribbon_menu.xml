@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Reutiliza las vistas tree/form de product.ribbon ya definidas por
+         website_sale (product_ribbon_view_tree / product_ribbon_form_view);
+         no se crea ninguna vista nueva. -->
+    <record id="action_asv_product_ribbon" model="ir.actions.act_window">
+        <field name="name">Cintas</field>
+        <field name="res_model">product.ribbon</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Mismo grupo que el ACL real de product.ribbon en
+         website_sale/security/ir.model.access.csv (CRUD completo solo para
+         sales_team.group_sale_manager), para que la visibilidad del menu
+         coincida con quien realmente puede usarlo. sequence=11 lo ubica
+         despues de 'Etiquetas de producto' (product_catalog_product_tags,
+         sin sequence explicito, usa el default 10). -->
+    <menuitem id="menu_asv_product_ribbon"
+              name="Cintas"
+              action="action_asv_product_ribbon"
+              parent="website_sale.menu_catalog"
+              groups="sales_team.group_sale_manager"
+              sequence="11"/>
+</odoo>
