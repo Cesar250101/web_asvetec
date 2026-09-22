@@ -4,10 +4,13 @@
         <section class="s_asv_featured_products asv-section" data-snippet="s_asv_featured_products"
                  style="background: white;">
             <!-- Consultas self-contained -->
-            <!-- 'html' es traducible: se fuerza en_US porque el sitio corre en es_ES,
-                 donde esta cinta conserva la traducción original "Fuera de stock". -->
+            <!-- Se referencia por id externo (web_asvetec.ribbon_en_stock,
+                 ver data/product_ribbon_data.xml) y no por el texto "html" de
+                 la cinta: así un administrador puede renombrarla desde
+                 Comercio electrónico > Productos > Cintas sin romper esta
+                 sección. -->
             <t t-set="asv_ribbon"
-               t-value="request.env['product.ribbon'].sudo().with_context(lang='en_US').search([('html', 'ilike', 'en stock')], limit=1)"/>
+               t-value="request.env.ref('web_asvetec.ribbon_en_stock', raise_if_not_found=False) or request.env['product.ribbon']"/>
             <t t-set="asv_featured_products"
                t-value="request.env['product.template'].sudo().search([('website_ribbon_id', 'in', asv_ribbon.id)], order='sequence asc, name asc') if asv_ribbon else request.env['product.template'].sudo().browse([])"/>
             <t t-set="asv_filter_categories"
@@ -151,8 +154,15 @@
 
                     <t t-if="not asv_featured_products">
                         <p class="asv-empty-state">
-                            No hay productos destacados disponibles. Asigna la cinta
-                            <b>"En stock"</b> a los productos que quieras mostrar aquí.
+                            <t t-if="asv_ribbon">
+                                No hay productos destacados disponibles. Asigna la cinta
+                                <b><t t-esc="asv_ribbon.html"/></b> a los productos que quieras mostrar aquí.
+                            </t>
+                            <t t-else="">
+                                No hay productos destacados disponibles: falta la cinta de
+                                disponibilidad (Comercio electrónico &gt; Productos &gt; Cintas).
+                                Contacta al administrador del sitio.
+                            </t>
                         </p>
                     </t>
                 </div>

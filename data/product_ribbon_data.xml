@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- ID externo fijo para la cinta de disponibilidad que usa la sección
+         "Productos destacados" (s_asv_featured_products.xml). El código la
+         busca por este id (web_asvetec.ribbon_en_stock), nunca por el texto
+         "html" de la cinta, para que un administrador pueda renombrarla desde
+         Comercio electrónico > Productos > Cintas sin romper la sección.
+
+         En esta instalación la cinta ya existía sin id externo (creada a
+         mano antes de esta feature); migrations/16.0.1.3.45/pre-migrate.py
+         adopta ese registro bajo este mismo id ANTES de que se procese este
+         archivo, así que aquí "noupdate" evita pisar su texto/colores reales.
+         Los valores de abajo solo aplican a una instalación nueva del
+         módulo, que no pasa por esa migración. -->
+    <record id="ribbon_en_stock" model="product.ribbon">
+        <field name="html">En stock</field>
+        <field name="html_class">o_ribbon_left</field>
+        <field name="bg_color">rgb(255, 193, 7)</field>
+        <field name="text_color">black</field>
+    </record>
+</odoo>
