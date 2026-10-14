@@ -16,8 +16,10 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 22px;
-        padding: 0 48px;
+        padding: 0 var(--asv-page-pad);
         max-width: var(--asv-page-max);
+        width: 100%;
+        box-sizing: border-box;
         margin-left: auto;
         margin-right: auto;
     }
@@ -97,4 +99,19 @@
     .asv-brand-flexbimec{ font-family: var(--asv-font-sans); font-weight: 800; font-size: 24px; color: #003a70; font-style: italic; }
     .asv-brand-sds      { font-family: Arial Black, sans-serif; font-weight: 900; font-size: 26px; color: #fff; background: #0066b3; padding: 4px 14px; }
     .asv-brand-indura   { font-family: var(--asv-font-sans); font-weight: 800; font-size: 26px; color: #e30613; letter-spacing: -0.02em; }
+
+    @media (max-width: 576px) {
+        padding: 32px 0;
+        .asv-brands-header {
+            margin-bottom: 16px;
+        }
+        .asv-brand-tile {
+            width: 140px;
+            height: 72px;
+            padding: 0 16px;
+        }
+        .asv-brand-name {
+            font-size: 18px;
+        }
+    }
 }

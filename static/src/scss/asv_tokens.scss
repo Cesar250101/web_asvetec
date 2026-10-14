@@ -100,8 +100,14 @@
     --asv-page-pad: 48px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 991px) {
     :root {
-        --asv-page-pad: 20px;
+        --asv-page-pad: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --asv-page-pad: 16px;
     }
 }

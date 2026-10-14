@@ -1,8 +1,11 @@
 // ---- ASVETEC Servicios en Terreno ----
 .s_asv_services {
+    width: 100%;
+    overflow: hidden;
+
     .asv-services-intro {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
         gap: 56px;
         align-items: start;
         margin-bottom: 36px;
@@ -10,7 +13,7 @@
 
     .asv-services-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 18px;
     }
 
@@ -24,6 +27,7 @@
         gap: 14px;
         min-height: 200px;
         transition: transform 160ms ease, box-shadow 160ms ease;
+        box-sizing: border-box;
 
         &:hover {
             transform: translateY(-3px);
@@ -35,6 +39,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 8px;
     }
 
     .asv-service-icon {
@@ -46,6 +51,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex: 0 0 auto;
     }
 
     .asv-service-tag {
@@ -57,6 +63,7 @@
         background: rgba(54, 14, 99, 0.08);
         padding: 4px 8px;
         border-radius: 3px;
+        white-space: nowrap;
     }
 
     .asv-service-title {
@@ -64,6 +71,7 @@
         font-size: 18px;
         font-weight: 800;
         color: var(--asv-navy-800);
+        word-break: break-word;
     }
 
     .asv-service-desc {
@@ -72,6 +80,7 @@
         color: var(--fg-2);
         line-height: 1.55;
         flex: 1;
+        word-break: break-word;
     }
 
     .asv-service-link {
@@ -86,13 +95,25 @@
         &:hover { opacity: 0.8; }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 991px) {
         .asv-services-intro {
             grid-template-columns: 1fr;
             gap: 20px;
         }
         .asv-services-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .asv-services-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .asv-service-card {
+            padding: 20px 18px;
+            min-height: auto;
         }
     }
 }

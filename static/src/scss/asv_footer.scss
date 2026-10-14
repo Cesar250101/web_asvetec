@@ -5,6 +5,8 @@
         color: rgba(255, 255, 255, 0.72);
         font-family: var(--asv-font-sans);
         font-size: 14px;
+        width: 100%;
+        overflow: hidden;
 
         // Franja cyan en el tope del footer
         &::before {
@@ -15,9 +17,6 @@
         }
 
         // Mismo ancho máximo y centrado que el resto de la página.
-        // No depende de .asv-body (ver asv_layout.scss): esa clase requiere
-        // website.name == 'ASVETEC' exacto y nunca se aplica al sitio real
-        // 'Asvetec', así que el footer fija su propio centrado aquí.
         .asv-container {
             max-width: var(--asv-page-max);
             margin: 0 auto;
@@ -26,20 +25,28 @@
             padding-right: var(--asv-page-pad);
             padding-top: 56px;
             padding-bottom: 52px;
+            box-sizing: border-box;
+
+            @media (max-width: 576px) {
+                padding-top: 36px;
+                padding-bottom: 36px;
+            }
         }
     }
 
     .asv-footer-grid {
         display: grid;
-        grid-template-columns: 1.8fr 1fr 1fr;
+        grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 1fr);
         gap: 48px;
 
-        @media (max-width: 900px) {
+        @media (max-width: 991px) {
             grid-template-columns: 1fr 1fr;
+            gap: 36px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 576px) {
             grid-template-columns: 1fr;
+            gap: 28px;
         }
     }
 
@@ -158,6 +165,13 @@
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
+
+            @media (max-width: 576px) {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 6px;
+            }
         }
 
         a {
@@ -170,5 +184,9 @@
 
     .asv-footer-copyright-sep {
         opacity: 0.3;
+
+        @media (max-width: 576px) {
+            display: none;
+        }
     }
 }

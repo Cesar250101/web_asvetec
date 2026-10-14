@@ -64,7 +64,7 @@
 
     .asv-prod-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 18px;
     }
 
@@ -76,6 +76,7 @@
         display: flex;
         flex-direction: column;
         transition: transform 160ms ease, box-shadow 160ms ease;
+        box-sizing: border-box;
 
         &:hover {
             transform: translateY(-3px);
@@ -121,11 +122,6 @@
                 stroke-width: 1.4;
             }
         }
-
-        // Las cintas usan el CSS estándar de Odoo (.o_ribbon + .o_ribbon_left/
-        // .o_ribbon_right/.o_tag_*), que ya viene en web.assets_frontend. Aquí
-        // no se define ningún estilo propio para no pisar los colores y la
-        // posición configurados en cada product.ribbon.
     }
 
     .asv-empty-state {
@@ -142,12 +138,14 @@
         flex-direction: column;
         gap: 6px;
         flex: 1;
+        box-sizing: border-box;
     }
 
     .asv-prod-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 6px;
     }
 
     .asv-prod-cat {
@@ -156,12 +154,16 @@
         text-transform: uppercase;
         font-weight: 800;
         color: var(--asv-cyan-500);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .asv-prod-brand {
         font-size: 11px;
         font-weight: 700;
         color: var(--fg-3);
+        white-space: nowrap;
     }
 
     .asv-prod-name {
@@ -171,6 +173,7 @@
         line-height: 1.3;
         color: var(--asv-navy-800);
         min-height: 38px;
+        word-break: break-word;
     }
 
     .asv-prod-sku {
@@ -183,6 +186,7 @@
         align-items: flex-end;
         justify-content: space-between;
         margin-top: 10px;
+        gap: 6px;
     }
 
     .asv-prod-desde {
@@ -198,6 +202,7 @@
         font-size: 22px;
         color: var(--asv-navy-800);
         line-height: 1.1;
+        white-space: nowrap;
     }
 
     .asv-prod-iva {
@@ -205,9 +210,42 @@
         color: var(--fg-3);
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 991px) {
         .asv-prod-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .asv-prod-filters {
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .asv-filter-btn {
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+        .asv-prod-grid {
+            gap: 10px;
+        }
+        .asv-prod-body {
+            padding: 10px;
+            gap: 4px;
+        }
+        .asv-prod-name {
+            font-size: 13px;
+            min-height: 32px;
+            line-height: 1.25;
+        }
+        .asv-prod-price {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .asv-prod-grid {
+            grid-template-columns: 1fr;
         }
     }
 }
