@@ -111,6 +111,30 @@
         }
     }
 
+    // Badge "Representación Oficial"
+    .asv-hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        margin: 12px 0 16px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: var(--asv-radius-pill);
+        color: white;
+        font-family: var(--asv-font-sans);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        svg {
+            color: var(--asv-cyan-300);
+            flex-shrink: 0;
+        }
+    }
+
     .asv-hero-ctas {
         display: flex;
         gap: 12px;
