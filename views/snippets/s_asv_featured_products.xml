@@ -15,6 +15,8 @@
                t-value="request.env['product.template'].sudo().search([('website_ribbon_id', 'in', asv_ribbon.id)], order='sequence asc, name asc') if asv_ribbon else request.env['product.template'].sudo().browse([])"/>
             <t t-set="asv_filter_categories"
                t-value="asv_featured_products.mapped('public_categ_ids').sorted(key=lambda c: (c.sequence, c.name))"/>
+            <!-- Lista de precios vigente del visitante en este sitio (la misma que usa /shop) -->
+            <t t-set="asv_pricelist" t-value="website.get_current_pricelist() if website else False"/>
             <!-- Pool de íconos para productos sin categoría SVG — ciclo por índice -->
             <t t-set="asv_icon_pool"
                t-value="request.env['product.public.category'].sudo().search([('asv_svg_icon', '!=', False)], order='sequence asc')"/>
@@ -135,7 +137,8 @@
                                              la configuración de impuestos incluidos/excluidos.
                                              Si la lista deja un precio menor al de lista, se
                                              muestra el precio original tachado. -->
-                                        <t t-set="asv_price_info" t-value="product._get_combination_info()"/>
+                                        <t t-set="asv_price_info"
+                                           t-value="product.with_context(website_id=website.id)._get_combination_info(pricelist=asv_pricelist) if website else product._get_combination_info()"/>
                                         <t t-set="asv_price" t-value="asv_price_info.get('price') or 0.0"/>
                                         <t t-if="asv_price">
                                             <div class="asv-prod-desde">Desde</div>
