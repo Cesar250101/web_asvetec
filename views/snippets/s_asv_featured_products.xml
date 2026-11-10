@@ -129,12 +129,29 @@
                                 </t>
                                 <div class="asv-prod-footer">
                                     <div>
-                                        <t t-if="product.list_price">
+                                        <!-- Precio calculado igual que en la ficha de /shop:
+                                             _get_combination_info aplica la lista de precios
+                                             vigente del sitio (website.get_current_pricelist) y
+                                             la configuración de impuestos incluidos/excluidos.
+                                             Si la lista deja un precio menor al de lista, se
+                                             muestra el precio original tachado. -->
+                                        <t t-set="asv_price_info" t-value="product._get_combination_info()"/>
+                                        <t t-set="asv_price" t-value="asv_price_info.get('price') or 0.0"/>
+                                        <t t-if="asv_price">
                                             <div class="asv-prod-desde">Desde</div>
+                                            <t t-if="asv_price_info.get('has_discounted_price')">
+                                                <div class="asv-prod-price-old">
+                                                    $<t t-esc="'{:,.0f}'.format(asv_price_info['list_price']).replace(',', '.')"/>
+                                                </div>
+                                            </t>
                                             <div class="asv-prod-price">
-                                                $<t t-esc="'{:,.0f}'.format(product.list_price).replace(',', '.')"/>
+                                                $<t t-esc="'{:,.0f}'.format(asv_price).replace(',', '.')"/>
                                             </div>
-                                            <div class="asv-prod-iva">+ IVA</div>
+                                            <div class="asv-prod-iva">
+                                                <!-- Mismo criterio que website_sale._price_with_tax_computed -->
+                                                <t t-if="request.env.user.has_group('account.group_show_line_subtotals_tax_excluded')">+ IVA</t>
+                                                <t t-else="">IVA incluido</t>
+                                            </div>
                                         </t>
                                         <t t-else="">
                                             <div class="asv-prod-price">A consultar</div>

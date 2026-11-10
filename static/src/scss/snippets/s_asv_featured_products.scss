@@ -205,6 +205,15 @@
         white-space: nowrap;
     }
 
+    // Precio original tachado cuando la lista de precios aplica descuento
+    .asv-prod-price-old {
+        font-size: 12px;
+        color: #dc3545;
+        text-decoration: line-through;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+
     .asv-prod-iva {
         font-size: 10px;
         color: var(--fg-3);
